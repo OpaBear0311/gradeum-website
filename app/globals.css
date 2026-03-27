@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white font-sans text-gradeum-text antialiased;
+  background-image: linear-gradient(180deg, rgba(248, 249, 250, 0.9) 0%, #ffffff 28%);
+}
+
+* {
+  @apply border-gradeum-border;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  @apply transition-colors duration-200;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(0, 172, 193, 0.5);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgba(0, 172, 193, 0.18);
+}
+
+.text-balance {
+  text-wrap: balance;
+}

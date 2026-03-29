@@ -1,0 +1,6 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#FAF7F2"/>
+  <text x="60" y="80" font-family="Georgia, serif" font-size="18" font-weight="bold" letter-spacing="4" fill="#1B3A5C">GRADEUM</text>
+  <rect x="60" y="95" width="80" height="3" fill="#C4883A"/>
+  <text x="600" y="340" font-family="Georgia, serif" font-size="48" fill="#1B3A5C" text-anchor="middle">About Gradeum</text>
+</svg>

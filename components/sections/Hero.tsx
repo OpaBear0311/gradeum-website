@@ -18,7 +18,7 @@ export default function Hero({
   bgImage,
 }: HeroProps) {
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[70vh] flex flex-col items-center justify-center overflow-hidden">
       {/* Background with paper overlay */}
       {bgImage && (
         <div
@@ -29,7 +29,7 @@ export default function Hero({
       <div className="absolute inset-0 bg-paper/85" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center pt-20 pb-16">
+      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center pt-20 pb-10">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif text-navy leading-tight mb-6">
           {headline}
         </h1>
@@ -64,6 +64,23 @@ export default function Hero({
             ))}
           </div>
         )}
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="relative z-10 pb-6">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          className="text-navy/30"
+          style={{ animation: "bounce-down 2s ease-in-out infinite" }}
+          aria-hidden="true"
+        >
+          <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ import DocsContent from "@/components/sections/DocsContent";
 export const metadata: Metadata = {
   title: "Documentation \u2014 Gradeum",
   description:
-    "Gradeum platform documentation, Agent installation guide, and API reference.",
+    "Gradeum platform documentation, Assistant installation guide, and API reference.",
 };
 
 export default function DocsPage() {

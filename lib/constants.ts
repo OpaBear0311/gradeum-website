@@ -42,7 +42,6 @@ export const FIRMS_NAV_LINKS = [
 
 // Agencies navigation
 export const AGENCIES_NAV_LINKS = [
-  { label: "Product", href: "/agencies/product" },
   { label: "Use Cases", href: "/agencies/use-cases" },
   { label: "Pricing", href: "/agencies/pricing" },
   { label: "Contact", href: "/agencies/contact" },
@@ -79,7 +78,7 @@ export const FIRMS_FEATURES = [
   "Resource forecasting (12-week capacity)",
   "Proposal intelligence",
   "Document production engine",
-  "Gradeum Agent (on-premise, your data stays)",
+  "Gradeum Assistant (on-premise, your data stays)",
   "Unlimited queries",
   "60-day free trial",
 ];
@@ -91,7 +90,7 @@ export const AGENCIES_FEATURES = [
   "Basic report generation (PDF + DOCX)",
   "Query history with search",
   "Admin panel (users, indexing, audit log)",
-  "Gradeum Agent (on-premise, your data stays)",
+  "Gradeum Assistant (on-premise, your data stays)",
   "Source attribution (document, page, section, date)",
   "Unlimited queries",
 ];
@@ -101,7 +100,7 @@ export const FIRMS_FAQ = [
   {
     question: "Does my data leave my network?",
     answer:
-      "No. The Gradeum Agent runs on your server and indexes documents locally. Only relevant document chunks are retrieved in response to a specific query. Your files never leave your building.",
+      "No. The Gradeum Assistant runs on your server and indexes documents locally. Only relevant document chunks are retrieved in response to a specific query. Your files never leave your building.",
   },
   {
     question: "Does Gradeum make engineering decisions?",
@@ -135,7 +134,7 @@ export const AGENCIES_FAQ = [
   {
     question: "Does our data leave our network?",
     answer:
-      "No. The Gradeum Agent runs on your server. Documents are indexed locally. Only relevant excerpts are retrieved in response to a specific query. Full data sovereignty.",
+      "No. The Gradeum Assistant runs on your server. Documents are indexed locally. Only relevant excerpts are retrieved in response to a specific query. Full data sovereignty.",
   },
   {
     question: "Do we need engineering staff to use it?",
@@ -145,7 +144,7 @@ export const AGENCIES_FAQ = [
   {
     question: "What about documents from decades ago?",
     answer:
-      "The Agent processes scanned documents using OCR. Historical engineering records, hand-drawn plans, and legacy reports are all searchable once indexed. Every result includes the original date of record.",
+      "The Assistant processes scanned documents using OCR. Historical engineering records, hand-drawn plans, and legacy reports are all searchable once indexed. Every result includes the original date of record.",
   },
 ];
 

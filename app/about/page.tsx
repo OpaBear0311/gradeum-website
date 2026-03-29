@@ -21,7 +21,7 @@ const principles = [
   {
     title: "Your data is yours.",
     description:
-      "The Gradeum Agent runs on your server. Documents are indexed locally. Nothing leaves your network.",
+      "The Gradeum Assistant runs on your server. Documents are indexed locally. Nothing leaves your network.",
   },
   {
     title: "The record is immutable.",

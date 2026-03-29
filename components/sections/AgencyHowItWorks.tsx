@@ -1,9 +1,9 @@
 const steps = [
   {
     number: "01",
-    title: "Install the Agent",
+    title: "Install the Assistant",
     description:
-      "The Gradeum Agent installs on your server. It indexes your document archive locally \u2014 PDFs, drawings, specifications, reports, correspondence. Your files never leave your network.",
+      "The Gradeum Assistant installs on your server. It indexes your document archive locally \u2014 PDFs, drawings, specifications, reports, correspondence. Your files never leave your network.",
   },
   {
     number: "02",

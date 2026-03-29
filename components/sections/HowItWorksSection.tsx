@@ -3,7 +3,7 @@ const steps = [
     number: "1",
     title: "Install",
     description:
-      "The Gradeum Agent installs on your server and indexes your project files locally. Your documents never leave your network.",
+      "The Gradeum Assistant installs on your server and indexes your project files locally. Your documents never leave your network.",
   },
   {
     number: "2",

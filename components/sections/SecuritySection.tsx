@@ -29,12 +29,12 @@ const agencyPoints: SecurityPoint[] = [
   },
   {
     title: "TLS 1.3 in transit",
-    description: "All communication between the Agent and the interface uses TLS 1.3.",
+    description: "All communication between the Assistant and the interface uses TLS 1.3.",
   },
   {
     title: "Data sovereignty",
     description:
-      "Your files never leave your network. The Gradeum Agent runs entirely on your infrastructure.",
+      "Your files never leave your network. The Gradeum Assistant runs entirely on your infrastructure.",
   },
   {
     title: "Full audit log",
@@ -60,7 +60,7 @@ export default function SecuritySection({ variant = "firms" }: SecuritySectionPr
           <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-0 mb-16">
             {[
               "Firm Network",
-              "Gradeum Agent",
+              "Gradeum Assistant",
               "Cloud",
               "Claude",
               "Back",

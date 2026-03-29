@@ -11,8 +11,8 @@ export default function Footer() {
 
   return (
     <footer aria-label="Site footer" className="bg-navy-deep text-white/70">
-      <div className="max-w-6xl mx-auto px-6 md:px-10 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 py-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
           {columns.map((col) => (
             <div key={col.title}>
               <h4 className="text-xs font-bold tracking-widest text-white/40 uppercase mb-4 font-sans">

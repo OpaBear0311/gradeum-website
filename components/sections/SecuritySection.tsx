@@ -50,14 +50,14 @@ export default function SecuritySection({ variant = "firms" }: SecuritySectionPr
   const points = variant === "agencies" ? agencyPoints : defaultPoints;
 
   return (
-    <section className="py-20 md:py-28 bg-navy-deep">
+    <section className="py-12 md:py-16 bg-navy-deep">
       <div className="max-w-5xl mx-auto px-6 md:px-10">
-        <h2 className="text-3xl md:text-4xl font-serif text-white text-center mb-14">
+        <h2 className="text-3xl md:text-4xl font-serif text-white text-center mb-10">
           Security {variant === "agencies" ? "& Data Sovereignty" : "architecture"}
         </h2>
 
         {variant === "firms" && (
-          <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-0 mb-16">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-0 mb-10">
             {[
               "Firm Network",
               "Gradeum Assistant",
@@ -89,7 +89,7 @@ export default function SecuritySection({ variant = "firms" }: SecuritySectionPr
           {points.map((point) => (
             <div key={point.title} className="flex items-start gap-3">
               <svg
-                className="w-5 h-5 text-amber flex-shrink-0 mt-0.5"
+                className="w-5 h-5 text-white/40 flex-shrink-0 mt-0.5"
                 viewBox="0 0 20 20"
                 fill="none"
                 stroke="currentColor"

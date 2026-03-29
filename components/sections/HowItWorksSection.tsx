@@ -21,20 +21,19 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section className="py-20 md:py-28 bg-paper">
+    <section className="py-12 md:py-16 bg-paper">
       <div className="max-w-3xl mx-auto px-6 md:px-10">
-        <h2 className="text-3xl md:text-4xl font-serif text-navy text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-serif text-navy text-center mb-10">
           How it works
         </h2>
 
         <div className="relative">
-          {/* Connecting line */}
           <div className="absolute left-6 top-8 bottom-8 w-px bg-warm-gray hidden md:block" />
 
-          <div className="space-y-12">
+          <div className="space-y-8">
             {steps.map((step) => (
               <div key={step.number} className="flex gap-6 items-start">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber text-white flex items-center justify-center font-serif text-lg relative z-10">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-navy text-white flex items-center justify-center font-serif text-lg relative z-10">
                   {step.number}
                 </div>
                 <div className="pt-1">

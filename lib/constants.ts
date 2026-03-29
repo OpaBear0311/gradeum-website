@@ -31,10 +31,18 @@ export const CONTACT_EMAIL = "info@gradeum.io";
 
 export const SIGNUP_LIVE = false; // Flip when E&O bound
 
+// Industries strip for root landing
+export const INDUSTRIES = [
+  "Ports & Marine",
+  "Bridges & Highways",
+  "Coastal Protection",
+  "Water & Utilities",
+  "Buildings & Structures",
+];
+
 // Firms navigation
 export const FIRMS_NAV_LINKS = [
   { label: "Product", href: "/firms/product" },
-  { label: "Demo", href: "/firms/demo" },
   { label: "Pricing", href: "/firms/pricing" },
   { label: "About", href: "/about" },
   { label: "Docs", href: "/docs" },

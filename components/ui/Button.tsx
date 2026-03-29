@@ -10,7 +10,7 @@ interface ButtonProps {
 }
 
 const variants = {
-  primary: "bg-amber text-white hover:bg-amber-dark",
+  primary: "bg-navy text-white hover:bg-navy-deep",
   secondary: "border border-navy/20 text-navy hover:border-navy/40",
   ghost: "text-navy/70 hover:text-navy",
 };

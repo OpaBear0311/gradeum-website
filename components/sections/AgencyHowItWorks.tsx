@@ -21,17 +21,17 @@ const steps = [
 
 export default function AgencyHowItWorks() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-20">
-      <h2 className="text-3xl md:text-4xl font-serif text-navy text-center mb-16">
+    <section className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+      <h2 className="text-3xl md:text-4xl font-serif text-navy text-center mb-10">
         How It Works
       </h2>
-      <div className="grid md:grid-cols-3 gap-10">
+      <div className="grid md:grid-cols-3 gap-8">
         {steps.map((step) => (
           <div key={step.number} className="flex flex-col">
-            <span className="text-amber font-bold text-sm tracking-widest mb-3">
+            <span className="text-navy/30 font-bold text-sm tracking-widest mb-2">
               {step.number}
             </span>
-            <h3 className="text-xl font-serif text-navy mb-3">{step.title}</h3>
+            <h3 className="text-xl font-serif text-navy mb-2">{step.title}</h3>
             <p className="text-navy/60 leading-relaxed text-sm">
               {step.description}
             </p>

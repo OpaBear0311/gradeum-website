@@ -41,7 +41,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function UseCaseCards() {
   return (
-    <section className="max-w-5xl mx-auto px-6 py-20">
+    <section className="max-w-5xl mx-auto px-6 py-12">
       <h2 className="sr-only">Use cases by organization type</h2>
       <div className="grid md:grid-cols-2 gap-8">
         {AGENCY_USE_CASES.map((uc) => (

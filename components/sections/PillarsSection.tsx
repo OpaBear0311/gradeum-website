@@ -20,13 +20,13 @@ const pillars = [
 
 export default function PillarsSection() {
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-12 md:py-16 bg-white">
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         <h2 className="sr-only">What Gradeum does</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {pillars.map((pillar) => (
             <Card key={pillar.title} hoverable>
-              <h3 className="text-xl font-serif text-navy mb-4">
+              <h3 className="text-xl font-serif text-navy mb-3">
                 {pillar.title}
               </h3>
               <p className="text-navy/60 text-sm leading-relaxed">

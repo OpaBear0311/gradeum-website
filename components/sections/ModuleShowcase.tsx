@@ -28,9 +28,9 @@ const modules = [
 
 export default function ModuleShowcase() {
   return (
-    <section className="py-20 md:py-28 bg-paper">
+    <section className="py-12 md:py-16 bg-paper">
       <div className="max-w-6xl mx-auto px-6 md:px-10">
-        <div className="space-y-20">
+        <div className="space-y-12">
           {modules.map((mod, i) => {
             const isReversed = i % 2 === 1;
             return (

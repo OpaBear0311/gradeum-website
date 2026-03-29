@@ -10,21 +10,18 @@ interface TrustStripProps {
 
 export default function TrustStrip({ statements = defaultStatements }: TrustStripProps) {
   return (
-    <section className="bg-navy-deep py-14 md:py-16">
+    <section className="bg-navy-deep py-10 md:py-12">
       <div className="max-w-6xl mx-auto px-6 md:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {statements.map((statement) => (
             <p
               key={statement}
-              className="text-white/90 text-center text-sm md:text-base font-medium"
+              className="text-white/90 text-center text-sm font-medium"
             >
               {statement}
             </p>
           ))}
         </div>
-        <p className="text-center text-white/40 text-xs">
-          These are architectural facts enforced at the system level.
-        </p>
       </div>
     </section>
   );

@@ -32,14 +32,11 @@ export default function Navbar({ audience }: NavbarProps) {
         ? { label: "For Firms \u2192", href: "/firms" }
         : null;
 
-  const ctaHref =
-    audience === "agencies" ? "/agencies/pricing" : "/firms/pricing";
-
   return (
     <>
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:px-4 focus:py-2 focus:bg-amber focus:text-white focus:rounded-lg focus:text-sm focus:font-medium"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:px-4 focus:py-2 focus:bg-navy focus:text-white focus:rounded-lg focus:text-sm focus:font-medium"
       >
         Skip to content
       </a>
@@ -93,12 +90,16 @@ export default function Navbar({ audience }: NavbarProps) {
           </Link>
         )}
 
-        {/* CTA */}
+        {/* Demo link */}
         <Link
-          href={ctaHref}
-          className="hidden md:inline-flex items-center px-5 py-2 bg-amber text-white text-sm font-medium rounded-lg hover:bg-amber-dark transition-colors"
+          href="/firms/demo"
+          className={`hidden md:inline-flex items-center px-4 py-1.5 text-sm font-medium rounded-lg border transition-colors ${
+            scrolled
+              ? "border-white/20 text-white/80 hover:border-white/40 hover:text-white"
+              : "border-navy/20 text-navy hover:border-navy/40"
+          }`}
         >
-          Get Started
+          Demo
         </Link>
 
         {/* Mobile hamburger */}
@@ -132,6 +133,13 @@ export default function Navbar({ audience }: NavbarProps) {
               {link.label}
             </Link>
           ))}
+          <Link
+            href="/firms/demo"
+            onClick={() => setMenuOpen(false)}
+            className="text-white text-xl"
+          >
+            Demo
+          </Link>
           {crossLink && (
             <Link
               href={crossLink.href}
@@ -141,13 +149,6 @@ export default function Navbar({ audience }: NavbarProps) {
               {crossLink.label}
             </Link>
           )}
-          <Link
-            href={ctaHref}
-            onClick={() => setMenuOpen(false)}
-            className="mt-4 px-8 py-3 bg-amber text-white text-lg font-medium rounded-lg"
-          >
-            Get Started
-          </Link>
         </div>
       )}
     </>

@@ -51,8 +51,6 @@ export default function AgenciesHome() {
       <Hero
         headline={AGENCIES_HERO.headline}
         sub={AGENCIES_HERO.sub}
-        primaryCTA={{ label: "Get Started", href: "/agencies/pricing" }}
-        secondaryCTA={{ label: "See Use Cases", href: "/agencies/use-cases" }}
         trustChips={[
           "Data never leaves your network",
           "Source attribution on every result",
@@ -62,12 +60,12 @@ export default function AgenciesHome() {
       <StorySection />
 
       {/* What You Get */}
-      <section className="bg-warm-gray/30 py-20">
+      <section className="bg-warm-gray/30 py-12 md:py-16">
         <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-3xl font-serif text-navy text-center mb-14">
+          <h2 className="text-3xl font-serif text-navy text-center mb-10">
             What You Get
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {features.map((f) => (
               <Card key={f.title}>
                 <h3 className="text-lg font-serif text-navy mb-2">{f.title}</h3>
@@ -82,18 +80,13 @@ export default function AgenciesHome() {
 
       <AgencyHowItWorks />
       <TrustStrip statements={agencyTrust} />
-      <section className="py-20 text-center px-6">
-        <h2 className="text-3xl md:text-4xl font-serif text-navy mb-6">
+      <section className="py-12 text-center px-6">
+        <h2 className="text-3xl md:text-4xl font-serif text-navy mb-4">
           Your knowledge. Empowered.
         </h2>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button href="/agencies/pricing" size="lg">
-            Get Started
-          </Button>
-          <Button href="/agencies/contact" variant="secondary" size="lg">
-            Contact Us
-          </Button>
-        </div>
+        <Button href="/agencies/contact" variant="secondary" size="lg">
+          Contact Us
+        </Button>
       </section>
     </>
   );

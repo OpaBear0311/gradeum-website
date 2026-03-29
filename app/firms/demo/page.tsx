@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import GradeumSimulation from "@/components/demo/GradeumSimulation";
-import Button from "@/components/ui/Button";
+import Link from "next/link";
 import { CONTACT_EMAIL } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -17,21 +17,22 @@ export default function DemoPage() {
       <div className="h-[calc(100vh-64px)]">
         <GradeumSimulation />
       </div>
-      <div className="bg-navy-deep py-6 px-6 flex items-center justify-center gap-6">
+      <div className="bg-navy-deep py-5 px-6 flex items-center justify-center gap-6">
         <span className="text-white/60 text-sm hidden sm:inline">
-          Ready to get started?
+          Ready to learn more?
         </span>
-        <Button href="/firms/pricing" size="md">
+        <Link
+          href="/firms/pricing"
+          className="px-4 py-1.5 text-sm font-medium rounded-lg border border-white/20 text-white/80 hover:border-white/40 hover:text-white transition-colors"
+        >
           See Pricing
-        </Button>
-        <Button
+        </Link>
+        <Link
           href={`mailto:${CONTACT_EMAIL}`}
-          variant="secondary"
-          size="md"
-          className="border-white/20 text-white hover:border-white/40"
+          className="px-4 py-1.5 text-sm font-medium rounded-lg border border-white/20 text-white/80 hover:border-white/40 hover:text-white transition-colors"
         >
           Request a Walkthrough
-        </Button>
+        </Link>
       </div>
     </>
   );

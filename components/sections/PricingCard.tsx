@@ -22,7 +22,7 @@ export default function PricingCard({
     <div className="bg-white border border-warm-gray rounded-2xl p-10 max-w-md mx-auto w-full">
       {highlight && (
         <div className="mb-6">
-          <Badge variant="amber">{highlight}</Badge>
+          <Badge variant="navy">{highlight}</Badge>
         </div>
       )}
 
@@ -35,7 +35,7 @@ export default function PricingCard({
         {features.map((feature) => (
           <li key={feature} className="flex items-start gap-3 text-sm">
             <svg
-              className="w-5 h-5 text-amber flex-shrink-0 mt-0.5"
+              className="w-5 h-5 text-navy/40 flex-shrink-0 mt-0.5"
               viewBox="0 0 20 20"
               fill="none"
               stroke="currentColor"
@@ -48,7 +48,7 @@ export default function PricingCard({
         ))}
       </ul>
 
-      <Button href={cta.href} size="lg" className="w-full">
+      <Button href={cta.href} variant="secondary" size="lg" className="w-full">
         {cta.label}
       </Button>
     </div>

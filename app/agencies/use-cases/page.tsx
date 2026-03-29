@@ -18,15 +18,14 @@ export default function UseCasesPage() {
       <Hero
         headline="Built for the organizations that build communities"
         sub="Every agency has decades of engineering records. Gradeum makes them useful again."
-        primaryCTA={{ label: "Get Started", href: "/agencies/pricing" }}
       />
 
       <UseCaseCards />
 
       {/* Disclaimer callout */}
-      <section className="max-w-3xl mx-auto px-6 pb-20">
-        <div className="bg-navy-deep rounded-2xl p-8 md:p-10">
-          <p className="text-amber text-xs font-bold tracking-widest uppercase mb-4">
+      <section className="max-w-3xl mx-auto px-6 pb-12">
+        <div className="bg-navy-deep rounded-2xl p-8">
+          <p className="text-navy-light text-xs font-bold tracking-widest uppercase mb-3">
             Every response includes this disclaimer. Always.
           </p>
           <p className="text-white/80 text-sm leading-relaxed font-serif italic">
@@ -35,15 +34,10 @@ export default function UseCasesPage() {
         </div>
       </section>
 
-      <section className="py-16 text-center px-6">
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button href="/agencies/pricing" size="lg">
-            Get Started
-          </Button>
-          <Button href="/agencies/contact" variant="secondary" size="lg">
-            Contact Us
-          </Button>
-        </div>
+      <section className="py-10 text-center px-6">
+        <Button href="/agencies/contact" variant="secondary" size="lg">
+          Contact Us
+        </Button>
       </section>
     </>
   );

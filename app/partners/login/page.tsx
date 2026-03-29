@@ -64,12 +64,12 @@ export default function PartnerLoginPage() {
             </button>
           </form>
 
-          <div className="mt-6 p-4 bg-amber/5 border border-amber/20 rounded-lg">
+          <div className="mt-6 p-4 bg-navy/5 border border-navy/10 rounded-lg">
             <p className="text-sm text-navy/60 text-center">
               Partner portal launching soon. Contact{" "}
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="text-amber underline"
+                className="text-navy underline"
               >
                 {CONTACT_EMAIL}
               </a>{" "}
@@ -79,7 +79,7 @@ export default function PartnerLoginPage() {
 
           <p className="text-center text-xs text-navy/40 mt-6">
             Not a partner?{" "}
-            <Link href="/agencies/contact" className="text-amber underline">
+            <Link href="/agencies/contact" className="text-navy/60 underline">
               Learn about the Gradeum Partner Program
             </Link>
           </p>

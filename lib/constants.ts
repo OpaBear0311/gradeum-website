@@ -3,9 +3,33 @@
 export const TAGLINE = "Your knowledge. Empowered.";
 
 export const ROOT_HERO = {
-  headline: "AI built for the people who build everything else.",
-  sub: "For engineering firms. For the agencies they serve.",
+  headline: "THE INFRASTRUCTURE OF OUR WORLD",
+  sub: "Engineering firms that design it. Agencies that maintain it. Industry that builds it.",
 };
+
+export const AUDIENCE_CARDS = [
+  {
+    title: "For Firms",
+    description:
+      "The engineers who design it, inspect it, and put their seal on it. Ports. Bridges. Coastal structures. The infrastructure that holds.",
+    href: "/firms",
+    audience: "firms",
+  },
+  {
+    title: "For Agencies",
+    description:
+      "Port authorities. DOTs. Municipalities. The organizations that own it, regulate it, and are responsible for keeping it standing.",
+    href: "/agencies",
+    audience: "agencies",
+  },
+  {
+    title: "For Industry",
+    description:
+      "Refineries. Utilities. Operators. Developers. Decades of engineering records, inspection reports, and as-builts \u2014 searchable in seconds.",
+    href: "/firms",
+    audience: "industry",
+  },
+];
 
 export const FIRMS_HERO = {
   headline: "Be an engineer again.",

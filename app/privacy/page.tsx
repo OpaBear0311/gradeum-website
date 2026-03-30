@@ -12,7 +12,7 @@ export default function PrivacyPage() {
     <>
       <Navbar audience="root" />
       <main id="main-content" className="pt-16">
-        <section className="max-w-3xl mx-auto px-6 py-24">
+        <section className="max-w-3xl mx-auto px-6 py-12">
           <h1 className="text-4xl font-serif text-navy mb-8">
             Privacy Policy
           </h1>

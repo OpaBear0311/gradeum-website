@@ -20,7 +20,7 @@ export default function AgenciesPricingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(AGENCIES_FAQ)) }}
       />
-      <section className="py-16 px-6">
+      <section className="py-12 px-6">
         <div className="max-w-md mx-auto text-center mb-4">
           <h1 className="text-4xl font-serif text-navy mb-3">Pricing</h1>
         </div>
@@ -38,7 +38,7 @@ export default function AgenciesPricingPage() {
         </p>
       </section>
 
-      <section className="max-w-2xl mx-auto px-6 pb-16">
+      <section className="max-w-2xl mx-auto px-6 pb-10">
         <h2 className="text-2xl font-serif text-navy text-center mb-8">
           Frequently Asked Questions
         </h2>

@@ -60,9 +60,9 @@ export default function AgenciesHome() {
       <StorySection />
 
       {/* What You Get */}
-      <section className="bg-warm-gray/30 py-12 md:py-16">
+      <section className="bg-warm-gray/30 py-8">
         <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-3xl font-serif text-navy text-center mb-10">
+          <h2 className="text-3xl font-serif text-navy text-center mb-6">
             What You Get
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -80,7 +80,7 @@ export default function AgenciesHome() {
 
       <AgencyHowItWorks />
       <TrustStrip statements={agencyTrust} />
-      <section className="py-12 text-center px-6">
+      <section className="py-8 text-center px-6">
         <h2 className="text-3xl md:text-4xl font-serif text-navy mb-4">
           Your knowledge. Empowered.
         </h2>

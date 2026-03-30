@@ -1,6 +1,6 @@
 export default function StorySection() {
   return (
-    <section className="bg-warm-gray/40 py-12 md:py-16">
+    <section className="bg-warm-gray/40 py-8">
       <div className="max-w-2xl mx-auto px-6">
         <div className="font-serif text-navy/80 text-lg md:text-xl leading-[1.9] space-y-5">
           <p>Every organization has a version of this story.</p>

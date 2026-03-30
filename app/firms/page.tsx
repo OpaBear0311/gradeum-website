@@ -33,7 +33,7 @@ export default function FirmsHome() {
       <HowItWorksSection />
 
       {/* CTA Section */}
-      <section className="py-12 md:py-16 bg-warm-gray/30">
+      <section className="py-8 bg-warm-gray/30">
         <div className="max-w-3xl mx-auto px-6 md:px-10 text-center">
           <h2 className="text-3xl md:text-4xl font-serif text-navy mb-3">
             {TAGLINE}

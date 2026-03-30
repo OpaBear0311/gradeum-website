@@ -87,7 +87,7 @@ export default function DocsContent() {
   const active = categories.find((c) => c.id === activeCategory)!;
 
   return (
-    <div className="max-w-6xl mx-auto px-6 md:px-10 py-12 md:py-16">
+    <div className="max-w-6xl mx-auto px-6 md:px-10 py-8">
       {/* Search placeholder */}
       <div className="mb-10">
         <div className="max-w-md">

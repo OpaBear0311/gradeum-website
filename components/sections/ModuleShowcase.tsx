@@ -28,7 +28,7 @@ const modules = [
 
 export default function ModuleShowcase() {
   return (
-    <section className="py-12 md:py-16 bg-paper">
+    <section className="py-8 bg-paper">
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         <div className="space-y-12">
           {modules.map((mod, i) => {

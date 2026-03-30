@@ -21,7 +21,7 @@ const steps = [
 
 export default function AgencyHowItWorks() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+    <section className="max-w-6xl mx-auto px-6 py-8">
       <h2 className="text-3xl md:text-4xl font-serif text-navy text-center mb-10">
         How It Works
       </h2>

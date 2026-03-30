@@ -48,7 +48,7 @@ export default function FirmsPricingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-8 bg-white">
         <div className="max-w-2xl mx-auto px-6 md:px-10">
           <h2 className="text-2xl font-serif text-navy mb-8 text-center">
             Frequently asked questions

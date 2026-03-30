@@ -3,6 +3,7 @@ interface HeroProps {
   sub: string;
   trustChips?: string[];
   bgImage?: string;
+  uppercase?: boolean;
 }
 
 export default function Hero({
@@ -10,9 +11,10 @@ export default function Hero({
   sub,
   trustChips,
   bgImage,
+  uppercase = false,
 }: HeroProps) {
   return (
-    <section className="relative min-h-[55vh] flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center overflow-hidden">
       {bgImage && (
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -21,15 +23,19 @@ export default function Hero({
       )}
       <div className="absolute inset-0 bg-paper/85" />
 
-      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center pt-20 pb-4">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif text-navy leading-tight mb-4">
+      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center pt-20 pb-6">
+        <h1
+          className={`text-4xl sm:text-5xl md:text-6xl font-serif text-navy leading-tight mb-3 ${
+            uppercase ? "uppercase tracking-wide" : ""
+          }`}
+        >
           {headline}
         </h1>
         <p className="text-lg md:text-xl text-navy/60 max-w-2xl mx-auto leading-relaxed">
           {sub}
         </p>
         {trustChips && trustChips.length > 0 && (
-          <div className="flex flex-wrap justify-center gap-3 mt-6">
+          <div className="flex flex-wrap justify-center gap-3 mt-4">
             {trustChips.map((chip) => (
               <span
                 key={chip}
@@ -40,23 +46,6 @@ export default function Hero({
             ))}
           </div>
         )}
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="relative z-10 pb-4 mt-2">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          className="text-navy/30"
-          style={{ animation: "bounce-down 2s ease-in-out infinite" }}
-          aria-hidden="true"
-        >
-          <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
       </div>
     </section>
   );

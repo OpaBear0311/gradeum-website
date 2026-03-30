@@ -50,7 +50,7 @@ export default function SecuritySection({ variant = "firms" }: SecuritySectionPr
   const points = variant === "agencies" ? agencyPoints : defaultPoints;
 
   return (
-    <section className="py-12 md:py-16 bg-navy-deep">
+    <section className="py-8 bg-navy-deep">
       <div className="max-w-5xl mx-auto px-6 md:px-10">
         <h2 className="text-3xl md:text-4xl font-serif text-white text-center mb-10">
           Security {variant === "agencies" ? "& Data Sovereignty" : "architecture"}

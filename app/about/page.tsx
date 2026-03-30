@@ -49,7 +49,7 @@ export default function AboutPage() {
         </section>
 
         {/* The Story */}
-        <section className="py-12 md:py-16 bg-white">
+        <section className="py-8 bg-white">
           <div className="max-w-2xl mx-auto px-6 md:px-10">
             <h2 className="text-2xl font-serif text-navy mb-6">The Story</h2>
             <div className="space-y-5 text-navy/70 leading-relaxed">
@@ -72,7 +72,7 @@ export default function AboutPage() {
         </section>
 
         {/* Principles */}
-        <section className="py-12 md:py-16 bg-paper">
+        <section className="py-8 bg-paper">
           <div className="max-w-2xl mx-auto px-6 md:px-10">
             <h2 className="text-2xl font-serif text-navy mb-8">Principles</h2>
             <div className="space-y-8">
@@ -91,7 +91,7 @@ export default function AboutPage() {
         </section>
 
         {/* Tagline */}
-        <section className="py-12 md:py-16 bg-warm-gray/30">
+        <section className="py-8 bg-warm-gray/30">
           <div className="max-w-3xl mx-auto px-6 md:px-10 text-center">
             <h2 className="text-3xl md:text-4xl font-serif text-navy">
               {TAGLINE}

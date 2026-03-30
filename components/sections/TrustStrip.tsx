@@ -10,7 +10,7 @@ interface TrustStripProps {
 
 export default function TrustStrip({ statements = defaultStatements }: TrustStripProps) {
   return (
-    <section className="bg-navy-deep py-10 md:py-12">
+    <section className="bg-navy-deep py-8">
       <div className="max-w-6xl mx-auto px-6 md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {statements.map((statement) => (

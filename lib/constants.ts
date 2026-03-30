@@ -298,3 +298,7 @@ export const INDUSTRY_STEPS = [
       "Every answer traceable to the original document, page, section, and date of record. Decades of records, searchable in seconds.",
   },
 ];
+
+// ── Download ────────────────────────────────────────────────
+export const DOWNLOAD_URL =
+  "https://github.com/OpaBear0311/gradeum/releases/download/v1.0.0-beta/GradeumSetup.exe";

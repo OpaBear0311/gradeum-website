@@ -25,8 +25,8 @@ export const AUDIENCE_CARDS = [
   {
     title: "For Industry",
     description:
-      "Refineries. Utilities. Operators. Developers. Decades of engineering records, inspection reports, and as-builts \u2014 searchable in seconds.",
-    href: "/firms",
+      "Companies like DOW, Kellogg, Ford, and ExxonMobil sit on decades of engineering records \u2014 inspection reports, P&IDs, as-builts, and specifications buried across file servers. Gradeum makes them searchable in seconds.",
+    href: "/industry",
     audience: "industry",
   },
 ];
@@ -84,7 +84,7 @@ export const FOOTER_LINKS = {
   product: [
     { label: "For Firms", href: "/firms" },
     { label: "For Agencies", href: "/agencies" },
-    { label: "Demo", href: "/firms/demo" },
+    { label: "For Industry", href: "/industry" },
     { label: "Pricing", href: "/firms/pricing" },
   ],
   company: [
@@ -211,5 +211,90 @@ export const AGENCY_USE_CASES = [
     scenario:
       "A coastal zone management office needs to verify permit conditions from a 2011 authorization. The original permit, special conditions, and compliance correspondence are all searchable.",
     icon: "landmark",
+  },
+];
+
+// ── Industry Page ─────────────────────────────────────────────
+
+export const INDUSTRY_HERO = {
+  headline: "Decades of engineering records. Searchable in seconds.",
+  sub: "The companies that build and operate the world\u2019s infrastructure sit on terabytes of engineering data. Gradeum indexes it locally and makes it findable \u2014 without moving a single file.",
+};
+
+export const INDUSTRY_PROBLEM = [
+  "Every major industrial company has the same problem. Forty years of inspection reports. Thousands of as-built drawings from facility expansions in the 1990s. Specifications from contractors who finished the job and moved on. Equipment records filed by engineers who retired a decade ago.",
+  "It\u2019s all there \u2014 somewhere. Across shared drives, legacy document management systems, filing cabinets that got scanned in 2015, and folders organized by someone who left.",
+  "When a turnaround engineer needs the original P&IDs from a 2008 unit modification, they spend hours searching. When a safety audit requires historical inspection records, someone pulls a team off productive work to dig. When a new project starts at an existing facility, the design basis gets rebuilt from scratch because nobody can find the original.",
+  "That institutional knowledge didn\u2019t disappear. It\u2019s just unsearchable.",
+];
+
+export const INDUSTRY_SECTORS = [
+  {
+    sector: "Petrochemical & Refining",
+    examples: "DOW Chemical, ExxonMobil, BASF, LyondellBasell, Chevron Phillips",
+  },
+  {
+    sector: "Energy & Utilities",
+    examples: "Duke Energy, NextEra, Southern Company, Dominion, AES",
+  },
+  {
+    sector: "Automotive & Manufacturing",
+    examples: "Ford, General Motors, Toyota, Caterpillar, John Deere",
+  },
+  {
+    sector: "Engineering & Construction",
+    examples: "Kellogg Brown & Root (KBR), Bechtel, Fluor, Jacobs, AECOM",
+  },
+  {
+    sector: "Ports & Terminals",
+    examples: "Port of Houston, Maersk, DP World, Crowley, Kirby Corporation",
+  },
+  {
+    sector: "Mining & Materials",
+    examples: "Freeport-McMoRan, Nucor, U.S. Steel, Alcoa",
+  },
+];
+
+export const INDUSTRY_FEATURES = [
+  {
+    title: "Plain Language Search",
+    description:
+      "Ask a question in plain English. \u201CWhere are the pile driving records from the 2008 wharf rehabilitation?\u201D Gradeum finds it \u2014 with the document name, page number, and date of record.",
+  },
+  {
+    title: "Source Attribution",
+    description:
+      "Every result traces back to the original document. No hallucination. No guessing. The source file, the page, the section, and the relevance score.",
+  },
+  {
+    title: "Local Indexing",
+    description:
+      "The Gradeum Assistant runs on your server. It indexes your files locally. Your documents never leave your network. No cloud upload. No data transfer.",
+  },
+  {
+    title: "Zero Disruption",
+    description:
+      "No migration. No re-organizing your files. Gradeum indexes your existing file structure as-is. Install, point at your drives, and search.",
+  },
+];
+
+export const INDUSTRY_STEPS = [
+  {
+    number: "1",
+    title: "Install",
+    description:
+      "The Gradeum Assistant installs on your server and indexes your engineering files locally. Your documents never leave your network.",
+  },
+  {
+    number: "2",
+    title: "Ask",
+    description:
+      "Your team asks questions in natural language. Gradeum retrieves answers from your files, cited to source.",
+  },
+  {
+    number: "3",
+    title: "Find",
+    description:
+      "Every answer traceable to the original document, page, section, and date of record. Decades of records, searchable in seconds.",
   },
 ];

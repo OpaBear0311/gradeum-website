@@ -40,7 +40,7 @@ export default function AudienceFork() {
   return (
     <section className="max-w-6xl mx-auto px-6 py-8">
       <h2 className="sr-only">Choose your audience</h2>
-      <div className="grid md:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 gap-5 max-w-2xl mx-auto">
         {AUDIENCE_CARDS.map((card) => (
           <Link
             key={card.href + card.audience}

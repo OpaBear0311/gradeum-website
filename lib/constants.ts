@@ -4,7 +4,7 @@ export const TAGLINE = "Your knowledge. Empowered.";
 
 export const ROOT_HERO = {
   headline: "THE INFRASTRUCTURE OF OUR WORLD",
-  sub: "Engineering firms that design it. Agencies that maintain it. Industry that builds it.",
+  sub: "The companies the world depends on.",
 };
 
 export const AUDIENCE_CARDS = [
@@ -25,7 +25,7 @@ export const AUDIENCE_CARDS = [
   {
     title: "For Industry",
     description:
-      "Companies like DOW, Kellogg, Ford, and ExxonMobil sit on decades of engineering records \u2014 inspection reports, P&IDs, as-builts, and specifications buried across file servers. Gradeum makes them searchable in seconds.",
+      "The world's largest companies sit on decades of engineering records \u2014 inspection reports, P&IDs, as-builts, and specifications buried across file servers. Gradeum makes them searchable in seconds.",
     href: "/industry",
     audience: "industry",
   },
@@ -231,27 +231,27 @@ export const INDUSTRY_PROBLEM = [
 export const INDUSTRY_SECTORS = [
   {
     sector: "Petrochemical & Refining",
-    examples: "DOW Chemical, ExxonMobil, BASF, LyondellBasell, Chevron Phillips",
+    examples: "Refineries, chemical plants, and processing facilities with decades of P&IDs, inspection records, and turnaround documentation.",
   },
   {
     sector: "Energy & Utilities",
-    examples: "Duke Energy, NextEra, Southern Company, Dominion, AES",
+    examples: "Power generation, transmission, and distribution companies managing aging infrastructure across thousands of facilities.",
   },
   {
     sector: "Automotive & Manufacturing",
-    examples: "Ford, General Motors, Toyota, Caterpillar, John Deere",
+    examples: "Large-scale manufacturing operations with complex facility engineering, equipment specifications, and maintenance histories.",
   },
   {
     sector: "Engineering & Construction",
-    examples: "Kellogg Brown & Root (KBR), Bechtel, Fluor, Jacobs, AECOM",
+    examples: "Global EPC firms managing project archives spanning decades of design, construction, and commissioning records.",
   },
   {
     sector: "Ports & Terminals",
-    examples: "Port of Houston, Maersk, DP World, Crowley, Kirby Corporation",
+    examples: "Marine terminal operators with structural inspection reports, berth assessments, and facility engineering records.",
   },
   {
     sector: "Mining & Materials",
-    examples: "Freeport-McMoRan, Nucor, U.S. Steel, Alcoa",
+    examples: "Mining and metals operations with geotechnical records, structural assessments, and environmental compliance documentation.",
   },
 ];
 

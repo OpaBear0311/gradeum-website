@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="system-ui, -apple-system, sans-serif">
+  <!-- Window frame -->
+  <rect width="800" height="500" rx="12" fill="#0F1D36"/>
+  <rect x="0" y="0" width="800" height="36" rx="12" fill="#1B3A5C"/>
+  <rect x="0" y="12" width="800" height="24" fill="#1B3A5C"/>
+  <circle cx="20" cy="18" r="5" fill="#EF4444" opacity="0.7"/>
+  <circle cx="36" cy="18" r="5" fill="#F59E0B" opacity="0.7"/>
+  <circle cx="52" cy="18" r="5" fill="#22C55E" opacity="0.7"/>
+  <text x="400" y="22" fill="#9BA3B0" font-size="11" text-anchor="middle" font-weight="600">PE Review Queue</text>
+
+  <!-- Filter tabs -->
+  <rect x="16" y="48" width="768" height="36" rx="8" fill="#1B3A5C"/>
+  <rect x="24" y="54" width="40" height="24" rx="4" fill="#C4883A"/>
+  <text x="44" y="70" fill="#FAF7F2" font-size="9" text-anchor="middle" font-weight="600">All</text>
+  <rect x="72" y="54" width="80" height="24" rx="4" fill="#2A3F66"/>
+  <text x="112" y="70" fill="#FAF7F2" font-size="9" text-anchor="middle">Pending (3)</text>
+  <rect x="160" y="54" width="68" height="24" rx="4" fill="#2A3F66"/>
+  <text x="194" y="70" fill="#9BA3B0" font-size="9" text-anchor="middle">Approved</text>
+  <rect x="236" y="54" width="64" height="24" rx="4" fill="#2A3F66"/>
+  <text x="268" y="70" fill="#9BA3B0" font-size="9" text-anchor="middle">Rejected</text>
+
+  <!-- Queue header -->
+  <rect x="16" y="96" width="768" height="24" rx="0" fill="#1B3A5C" opacity="0.5"/>
+  <text x="32" y="112" fill="#9BA3B0" font-size="8" font-weight="700">DOCUMENT</text>
+  <text x="440" y="112" fill="#9BA3B0" font-size="8" font-weight="700">SUBMITTED BY</text>
+  <text x="600" y="112" fill="#9BA3B0" font-size="8" font-weight="700">TIME</text>
+  <text x="700" y="112" fill="#9BA3B0" font-size="8" font-weight="700">STATUS</text>
+
+  <!-- Row 1 (selected) -->
+  <rect x="16" y="122" width="768" height="44" rx="4" fill="#2A3F66"/>
+  <rect x="16" y="122" width="3" height="44" rx="1" fill="#C4883A"/>
+  <text x="32" y="142" fill="#FAF7F2" font-size="11" font-weight="600">Basis of Design -- Berth 7 Rehabilitation</text>
+  <text x="32" y="156" fill="#9BA3B0" font-size="9">BOD-2024-047  |  Rev A</text>
+  <text x="440" y="148" fill="#E8E4DD" font-size="10">M. Torres, EIT</text>
+  <text x="600" y="148" fill="#9BA3B0" font-size="10">2 hrs ago</text>
+  <rect x="695" y="138" width="64" height="20" rx="10" fill="#C4883A" opacity="0.2"/>
+  <text x="727" y="152" fill="#C4883A" font-size="9" text-anchor="middle" font-weight="600">PENDING</text>
+
+  <!-- Row 2 -->
+  <rect x="16" y="172" width="768" height="44" rx="4" fill="#1B3A5C"/>
+  <text x="32" y="192" fill="#FAF7F2" font-size="11" font-weight="600">Condition Assessment -- Wharf C</text>
+  <text x="32" y="206" fill="#9BA3B0" font-size="9">CA-2024-012  |  Rev B</text>
+  <text x="440" y="198" fill="#E8E4DD" font-size="10">A. Chen, EIT</text>
+  <text x="600" y="198" fill="#9BA3B0" font-size="10">5 hrs ago</text>
+  <rect x="695" y="188" width="64" height="20" rx="10" fill="#C4883A" opacity="0.2"/>
+  <text x="727" y="202" fill="#C4883A" font-size="9" text-anchor="middle" font-weight="600">PENDING</text>
+
+  <!-- Row 3 -->
+  <rect x="16" y="222" width="768" height="44" rx="4" fill="#1B3A5C"/>
+  <text x="32" y="242" fill="#FAF7F2" font-size="11" font-weight="600">QC Review -- Pile Driving Specifications</text>
+  <text x="32" y="256" fill="#9BA3B0" font-size="9">QC-2024-089  |  Rev A</text>
+  <text x="440" y="248" fill="#E8E4DD" font-size="10">R. Patel, EIT</text>
+  <text x="600" y="248" fill="#9BA3B0" font-size="10">1 day ago</text>
+  <rect x="695" y="238" width="72" height="20" rx="10" fill="#2D6A4F" opacity="0.3"/>
+  <text x="731" y="252" fill="#22C55E" font-size="9" text-anchor="middle" font-weight="600">APPROVED</text>
+
+  <!-- Expanded review panel for Row 1 -->
+  <rect x="16" y="280" width="768" height="204" rx="8" fill="#1B3A5C"/>
+  <rect x="16" y="280" width="768" height="3" rx="1" fill="#C4883A"/>
+
+  <text x="32" y="304" fill="#FAF7F2" font-size="12" font-weight="700">Review: Basis of Design -- Berth 7 Rehabilitation</text>
+
+  <!-- Document preview -->
+  <rect x="32" y="316" width="520" height="100" rx="6" fill="#0F1D36"/>
+  <text x="44" y="336" fill="#E8E4DD" font-size="9">3.1 Design Wind Speed</text>
+  <text x="44" y="350" fill="#9BA3B0" font-size="9">Design wind speed per ASCE 7-22 Figure 26.5-1B: 150 mph (3-second gust,</text>
+  <text x="44" y="362" fill="#9BA3B0" font-size="9">Risk Category III). Exposure Category D per coastal location.</text>
+  <text x="44" y="380" fill="#E8E4DD" font-size="9">3.2 Vessel Berthing Energy</text>
+  <text x="44" y="394" fill="#9BA3B0" font-size="9">Berthing energy per ASCE 61-19 Table 4.1: 45 kip-ft for Panamax vessel.</text>
+  <text x="44" y="408" fill="#9BA3B0" font-size="9">Abnormal berthing factor: 1.75 per PIANC WG 33.</text>
+
+  <!-- Action buttons -->
+  <rect x="568" y="320" width="100" height="32" rx="6" fill="#1B3A5C" stroke="#22C55E" stroke-width="1"/>
+  <text x="618" y="340" fill="#22C55E" font-size="10" text-anchor="middle" font-weight="600">Approve</text>
+
+  <rect x="676" y="320" width="100" height="32" rx="6" fill="#1B3A5C" stroke="#C4883A" stroke-width="1"/>
+  <text x="726" y="340" fill="#C4883A" font-size="10" text-anchor="middle" font-weight="600">Revise</text>
+
+  <!-- Checkbox -->
+  <rect x="568" y="364" width="14" height="14" rx="2" fill="#2A3F66" stroke="#9BA3B0" stroke-width="1"/>
+  <text x="590" y="375" fill="#9BA3B0" font-size="8">I am the PE of record and have</text>
+  <text x="590" y="386" fill="#9BA3B0" font-size="8">reviewed this document</text>
+
+  <!-- Immutable log note -->
+  <rect x="32" y="430" width="280" height="20" rx="4" fill="#0F1D36"/>
+  <text x="44" y="444" fill="#9BA3B0" font-size="8" font-style="italic">Logged to immutable responsible charge record</text>
+
+  <!-- Timer -->
+  <rect x="568" y="400" width="48" height="18" rx="4" fill="#2A3F66"/>
+  <text x="592" y="413" fill="#9BA3B0" font-size="8" text-anchor="middle">30s hold</text>
+</svg>

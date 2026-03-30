@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="system-ui, -apple-system, sans-serif">
+  <!-- Window frame -->
+  <rect width="800" height="500" rx="12" fill="#0F1D36"/>
+  <rect x="0" y="0" width="800" height="36" rx="12" fill="#1B3A5C"/>
+  <rect x="0" y="12" width="800" height="24" fill="#1B3A5C"/>
+  <circle cx="20" cy="18" r="5" fill="#EF4444" opacity="0.7"/>
+  <circle cx="36" cy="18" r="5" fill="#F59E0B" opacity="0.7"/>
+  <circle cx="52" cy="18" r="5" fill="#22C55E" opacity="0.7"/>
+  <text x="400" y="22" fill="#9BA3B0" font-size="11" text-anchor="middle" font-weight="600">Program Management</text>
+
+  <!-- Stats cards row -->
+  <rect x="16" y="48" width="184" height="64" rx="8" fill="#1B3A5C"/>
+  <text x="32" y="68" fill="#9BA3B0" font-size="9">Active Projects</text>
+  <text x="32" y="96" fill="#FAF7F2" font-size="28" font-weight="700">12</text>
+
+  <rect x="210" y="48" width="184" height="64" rx="8" fill="#1B3A5C"/>
+  <text x="226" y="68" fill="#9BA3B0" font-size="9">In PE Review</text>
+  <text x="226" y="96" fill="#C4883A" font-size="28" font-weight="700">4</text>
+
+  <rect x="404" y="48" width="184" height="64" rx="8" fill="#1B3A5C"/>
+  <text x="420" y="68" fill="#9BA3B0" font-size="9">Backlog</text>
+  <text x="420" y="96" fill="#22C55E" font-size="28" font-weight="700">$2.1M</text>
+
+  <rect x="598" y="48" width="186" height="64" rx="8" fill="#1B3A5C"/>
+  <text x="614" y="68" fill="#9BA3B0" font-size="9">Utilization</text>
+  <text x="614" y="96" fill="#3B82F6" font-size="28" font-weight="700">87%</text>
+
+  <!-- Project list -->
+  <rect x="16" y="124" width="768" height="24" rx="0" fill="#1B3A5C" opacity="0.5"/>
+  <text x="32" y="140" fill="#9BA3B0" font-size="8" font-weight="700">PROJECT</text>
+  <text x="360" y="140" fill="#9BA3B0" font-size="8" font-weight="700">CLIENT</text>
+  <text x="520" y="140" fill="#9BA3B0" font-size="8" font-weight="700">PROGRESS</text>
+  <text x="660" y="140" fill="#9BA3B0" font-size="8" font-weight="700">PE</text>
+  <text x="740" y="140" fill="#9BA3B0" font-size="8" font-weight="700">ITEMS</text>
+
+  <!-- Project 1 -->
+  <rect x="16" y="152" width="768" height="72" rx="6" fill="#1B3A5C"/>
+  <rect x="16" y="152" width="4" height="72" rx="2" fill="#22C55E"/>
+  <text x="32" y="174" fill="#FAF7F2" font-size="11" font-weight="600">Berth 7 Rehabilitation</text>
+  <rect x="32" y="182" width="50" height="16" rx="8" fill="#22C55E" opacity="0.2"/>
+  <text x="57" y="194" fill="#22C55E" font-size="8" text-anchor="middle" font-weight="600">Active</text>
+  <text x="32" y="214" fill="#9BA3B0" font-size="9">26-2401  |  Marine Structures</text>
+  <text x="360" y="186" fill="#E8E4DD" font-size="10">Port of Houston</text>
+  <!-- Progress bar -->
+  <rect x="520" y="178" width="120" height="6" rx="3" fill="#2A3F66"/>
+  <rect x="520" y="178" width="78" height="6" rx="3" fill="#22C55E"/>
+  <text x="520" y="200" fill="#9BA3B0" font-size="9">65%</text>
+  <text x="660" y="186" fill="#E8E4DD" font-size="10">J. Wiginton</text>
+  <rect x="740" y="176" width="24" height="18" rx="9" fill="#C4883A" opacity="0.2"/>
+  <text x="752" y="189" fill="#C4883A" font-size="9" text-anchor="middle" font-weight="600">3</text>
+
+  <!-- Project 2 -->
+  <rect x="16" y="230" width="768" height="72" rx="6" fill="#1B3A5C"/>
+  <rect x="16" y="230" width="4" height="72" rx="2" fill="#C4883A"/>
+  <text x="32" y="252" fill="#FAF7F2" font-size="11" font-weight="600">Wharf C Condition Assessment</text>
+  <rect x="32" y="260" width="66" height="16" rx="8" fill="#C4883A" opacity="0.2"/>
+  <text x="65" y="272" fill="#C4883A" font-size="8" text-anchor="middle" font-weight="600">PE Review</text>
+  <text x="32" y="292" fill="#9BA3B0" font-size="9">26-2389  |  Inspection</text>
+  <text x="360" y="264" fill="#E8E4DD" font-size="10">Maersk</text>
+  <rect x="520" y="256" width="120" height="6" rx="3" fill="#2A3F66"/>
+  <rect x="520" y="256" width="108" height="6" rx="3" fill="#C4883A"/>
+  <text x="520" y="278" fill="#9BA3B0" font-size="9">90%</text>
+  <text x="660" y="264" fill="#E8E4DD" font-size="10">S. Torres</text>
+  <rect x="740" y="254" width="24" height="18" rx="9" fill="#C4883A" opacity="0.2"/>
+  <text x="752" y="267" fill="#C4883A" font-size="9" text-anchor="middle" font-weight="600">1</text>
+
+  <!-- Project 3 -->
+  <rect x="16" y="308" width="768" height="72" rx="6" fill="#1B3A5C"/>
+  <rect x="16" y="308" width="4" height="72" rx="2" fill="#3B82F6"/>
+  <text x="32" y="330" fill="#FAF7F2" font-size="11" font-weight="600">Breakwater Extension -- Phase II</text>
+  <rect x="32" y="338" width="42" height="16" rx="8" fill="#3B82F6" opacity="0.2"/>
+  <text x="53" y="350" fill="#3B82F6" font-size="8" text-anchor="middle" font-weight="600">Draft</text>
+  <text x="32" y="370" fill="#9BA3B0" font-size="9">26-2412  |  Coastal</text>
+  <text x="360" y="342" fill="#E8E4DD" font-size="10">USACE Galveston</text>
+  <rect x="520" y="334" width="120" height="6" rx="3" fill="#2A3F66"/>
+  <rect x="520" y="334" width="30" height="6" rx="3" fill="#3B82F6"/>
+  <text x="520" y="356" fill="#9BA3B0" font-size="9">25%</text>
+  <text x="660" y="342" fill="#E8E4DD" font-size="10">K. Patel</text>
+  <rect x="740" y="332" width="24" height="18" rx="9" fill="#C4883A" opacity="0.2"/>
+  <text x="752" y="345" fill="#C4883A" font-size="9" text-anchor="middle" font-weight="600">7</text>
+
+  <!-- Project 4 -->
+  <rect x="16" y="386" width="768" height="72" rx="6" fill="#1B3A5C"/>
+  <rect x="16" y="386" width="4" height="72" rx="2" fill="#9BA3B0"/>
+  <text x="32" y="408" fill="#FAF7F2" font-size="11" font-weight="600">Bulkhead Replacement -- Terminal E</text>
+  <rect x="32" y="416" width="54" height="16" rx="8" fill="#9BA3B0" opacity="0.2"/>
+  <text x="59" y="428" fill="#9BA3B0" font-size="8" text-anchor="middle" font-weight="600">Scoping</text>
+  <text x="32" y="448" fill="#9BA3B0" font-size="9">26-2418  |  Marine Structures</text>
+  <text x="360" y="420" fill="#E8E4DD" font-size="10">Port of Corpus Christi</text>
+  <rect x="520" y="412" width="120" height="6" rx="3" fill="#2A3F66"/>
+  <rect x="520" y="412" width="12" height="6" rx="3" fill="#9BA3B0"/>
+  <text x="520" y="434" fill="#9BA3B0" font-size="9">10%</text>
+  <text x="660" y="420" fill="#E8E4DD" font-size="10">--</text>
+  <rect x="740" y="410" width="24" height="18" rx="9" fill="#2A3F66"/>
+  <text x="752" y="423" fill="#9BA3B0" font-size="9" text-anchor="middle" font-weight="600">0</text>
+</svg>

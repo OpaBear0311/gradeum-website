@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 500" fill="none" stroke="#1B3A5C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Capital (Ionic style) -->
+  <!-- Volute left -->
+  <path d="M20,60 C15,55 12,45 15,38 C18,31 25,28 32,30" />
+  <path d="M22,58 C18,54 16,46 18,40 C20,34 26,32 30,33" />
+  <!-- Volute right -->
+  <path d="M100,60 C105,55 108,45 105,38 C102,31 95,28 88,30" />
+  <path d="M98,58 C102,54 104,46 102,40 C100,34 94,32 90,33" />
+  <!-- Abacus (top slab) -->
+  <rect x="10" y="20" width="100" height="12" rx="2" />
+  <!-- Echinus (curved molding) -->
+  <path d="M18,32 Q60,45 102,32" />
+  <line x1="18" y1="32" x2="18" y2="60" />
+  <line x1="102" y1="32" x2="102" y2="60" />
+  <!-- Neck -->
+  <line x1="30" y1="60" x2="90" y2="60" />
+
+  <!-- Shaft with fluting -->
+  <line x1="30" y1="60" x2="35" y2="420" />
+  <line x1="90" y1="60" x2="85" y2="420" />
+  <!-- Flute lines (vertical grooves) -->
+  <line x1="42" y1="62" x2="44" y2="418" />
+  <line x1="52" y1="62" x2="53" y2="418" />
+  <line x1="60" y1="62" x2="60" y2="418" />
+  <line x1="68" y1="62" x2="67" y2="418" />
+  <line x1="78" y1="62" x2="76" y2="418" />
+
+  <!-- Entasis subtle curves on shaft edges -->
+  <path d="M30,60 Q28,240 35,420" opacity="0.3" />
+  <path d="M90,60 Q92,240 85,420" opacity="0.3" />
+
+  <!-- Base -->
+  <!-- Torus (upper) -->
+  <ellipse cx="60" cy="420" rx="30" ry="6" />
+  <!-- Scotia (concave molding) -->
+  <path d="M28,426 Q60,435 92,426" />
+  <!-- Plinth -->
+  <rect x="20" y="440" width="80" height="15" rx="2" />
+  <!-- Torus (lower) -->
+  <ellipse cx="60" cy="440" rx="32" ry="5" />
+
+  <!-- Subtle sketch texture lines -->
+  <line x1="35" y1="120" x2="36" y2="125" opacity="0.2" />
+  <line x1="83" y1="200" x2="84" y2="206" opacity="0.2" />
+  <line x1="45" y1="300" x2="44" y2="308" opacity="0.2" />
+  <line x1="75" y1="350" x2="76" y2="355" opacity="0.2" />
+</svg>

@@ -1,5 +1,5 @@
 import { FadeIn } from "@/components/motion";
-import { coreFeatures, homeStats, trustItems, workflowSteps } from "@/components/content";
+import { coreFeatures, homeStats, workflowSteps } from "@/components/content";
 import { BodyText, BrowserMockup, Eyebrow, Heading, PlaceholderMedia, PrimaryButton, Section } from "@/components/ui";
 
 export default function HomePage() {
@@ -11,8 +11,13 @@ export default function HomePage() {
             <div>
               <Eyebrow>Gradeum Technologies LLC</Eyebrow>
               <h1 className="text-balance text-5xl font-bold tracking-tight text-gradeum-navy sm:text-6xl">
-                AI for the future of infrastructure.
+                AI for the infrastructure of our world.
               </h1>
+              <div className="mt-4 space-y-1">
+                <p className="text-2xl font-semibold text-gradeum-navy/70 sm:text-3xl">Engineers</p>
+                <p className="text-2xl font-semibold text-gradeum-navy/70 sm:text-3xl">Agencies</p>
+                <p className="text-2xl font-semibold text-gradeum-navy/70 sm:text-3xl">Companies</p>
+              </div>
               <BodyText className="mt-6 max-w-2xl">
                 Gradeum finds the reference, drafts the document, and tracks the record so your
                 engineers can focus on engineering. Every answer cited to source. Every deliverable
@@ -91,18 +96,6 @@ export default function HomePage() {
             </FadeIn>
           ))}
         </div>
-      </Section>
-
-      <Section className="py-8">
-        <FadeIn>
-          <div className="space-y-3 rounded-4xl border border-gradeum-border bg-gradeum-navy px-8 py-10">
-            {trustItems.map((item) => (
-              <p key={item} className="text-sm font-semibold uppercase tracking-[0.12em] text-white">
-                {item}
-              </p>
-            ))}
-          </div>
-        </FadeIn>
       </Section>
 
       <Section tone="mist">

@@ -1,6 +1,6 @@
 import { FadeIn } from "@/components/motion";
 import { coreFeatures, homeStats, trustItems, workflowSteps } from "@/components/content";
-import { BodyText, BrowserMockup, Card, Eyebrow, Heading, PlaceholderMedia, PrimaryButton, Section } from "@/components/ui";
+import { BodyText, BrowserMockup, Eyebrow, Heading, PlaceholderMedia, PrimaryButton, Section } from "@/components/ui";
 
 export default function HomePage() {
   return (
@@ -11,7 +11,7 @@ export default function HomePage() {
             <div>
               <Eyebrow>Gradeum Technologies LLC</Eyebrow>
               <h1 className="text-balance text-5xl font-bold tracking-tight text-gradeum-navy sm:text-6xl">
-                Your firm&apos;s engineering knowledge. Working.
+                AI for the future of infrastructure.
               </h1>
               <BodyText className="mt-6 max-w-2xl">
                 Gradeum finds the reference, drafts the document, and tracks the record so your
@@ -62,13 +62,13 @@ export default function HomePage() {
             </blockquote>
           </FadeIn>
         </div>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 space-y-4">
           {homeStats.map((stat, index) => (
             <FadeIn key={stat.label} delay={index * 0.06}>
-              <Card className="h-full">
+              <div className="border-l-4 border-gradeum-navy pl-6 py-3">
                 <p className="text-3xl font-semibold text-gradeum-navy">{stat.value}</p>
-                <p className="mt-3 text-base leading-7 text-gradeum-muted">{stat.label}</p>
-              </Card>
+                <p className="mt-1 text-base leading-7 text-gradeum-muted">{stat.label}</p>
+              </div>
             </FadeIn>
           ))}
         </div>
@@ -81,13 +81,13 @@ export default function HomePage() {
             <Heading>Gradeum does everything else.</Heading>
           </div>
         </FadeIn>
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 space-y-8">
           {coreFeatures.map((feature, index) => (
             <FadeIn key={feature.title} delay={index * 0.06}>
-              <Card className="h-full">
+              <div className="border-l-4 border-gradeum-cyan pl-6">
                 <h3 className="text-2xl font-semibold text-gradeum-navy">{feature.title}</h3>
-                <p className="mt-4 text-base leading-7 text-gradeum-muted">{feature.description}</p>
-              </Card>
+                <p className="mt-2 text-base leading-7 text-gradeum-muted">{feature.description}</p>
+              </div>
             </FadeIn>
           ))}
         </div>
@@ -95,11 +95,11 @@ export default function HomePage() {
 
       <Section className="py-8">
         <FadeIn>
-          <div className="grid gap-4 rounded-4xl border border-gradeum-border bg-gradeum-navy px-6 py-8 text-center text-sm font-semibold uppercase tracking-[0.12em] text-white sm:grid-cols-2 lg:grid-cols-4">
+          <div className="space-y-3 rounded-4xl border border-gradeum-border bg-gradeum-navy px-8 py-10">
             {trustItems.map((item) => (
-              <div key={item} className="rounded-full border border-white/15 bg-white/5 px-4 py-4">
+              <p key={item} className="text-sm font-semibold uppercase tracking-[0.12em] text-white">
                 {item}
-              </div>
+              </p>
             ))}
           </div>
         </FadeIn>
@@ -117,20 +117,18 @@ export default function HomePage() {
               </BodyText>
             </div>
           </FadeIn>
-          <div className="space-y-6">
+          <div className="space-y-8">
             {workflowSteps.map((step, index) => (
               <FadeIn key={step.title} delay={index * 0.07}>
-                <Card>
-                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradeum-navy text-lg font-semibold text-white">
-                      {index + 1}
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gradeum-navy">{step.title}</h3>
-                      <p className="mt-3 text-base leading-7 text-gradeum-muted">{step.description}</p>
-                    </div>
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradeum-navy text-lg font-semibold text-white">
+                    {index + 1}
                   </div>
-                </Card>
+                  <div>
+                    <h3 className="text-2xl font-semibold text-gradeum-navy">{step.title}</h3>
+                    <p className="mt-2 text-base leading-7 text-gradeum-muted">{step.description}</p>
+                  </div>
+                </div>
               </FadeIn>
             ))}
           </div>

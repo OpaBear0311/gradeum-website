@@ -10,19 +10,17 @@ export default function HomePage() {
           <FadeIn>
             <div>
               <Eyebrow>Gradeum Technologies LLC</Eyebrow>
-              <h1 className="text-balance text-5xl font-bold tracking-tight text-gradeum-navy sm:text-6xl">
-                AI for the infrastructure of our world.
+              <h1 className="text-5xl font-bold uppercase tracking-tight text-gradeum-navy sm:text-6xl lg:text-7xl">
+                AI for the<br />infrastructure<br />of our world
               </h1>
-              <div className="mt-4 space-y-1">
-                <p className="text-2xl font-semibold text-gradeum-navy/70 sm:text-3xl">Engineers</p>
-                <p className="text-2xl font-semibold text-gradeum-navy/70 sm:text-3xl">Agencies</p>
-                <p className="text-2xl font-semibold text-gradeum-navy/70 sm:text-3xl">Companies</p>
+              <p className="mt-6 max-w-lg text-lg leading-8 text-gradeum-muted">
+                Engineering firms that design it. Agencies that maintain it. Industry that builds it.
+              </p>
+              <div className="mt-6 space-y-1">
+                <p className="text-xl font-semibold text-gradeum-navy sm:text-2xl">Engineers</p>
+                <p className="text-xl font-semibold text-gradeum-navy sm:text-2xl">Agencies</p>
+                <p className="text-xl font-semibold text-gradeum-navy sm:text-2xl">Companies</p>
               </div>
-              <BodyText className="mt-6 max-w-2xl">
-                Gradeum finds the reference, drafts the document, and tracks the record so your
-                engineers can focus on engineering. Every answer cited to source. Every deliverable
-                reviewed by your PE. Your documents never leave your server.
-              </BodyText>
               <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
                 <PrimaryButton href="/trial">Start Free Trial</PrimaryButton>
                 <p className="text-sm leading-6 text-gradeum-muted">

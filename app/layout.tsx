@@ -1,43 +1,42 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Analytics } from "@vercel/analytics/react";
-import { Footer } from "@/components/footer";
-import { SiteNav } from "@/components/site-nav";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gradeum.com"),
-  title: {
-    default: "Gradeum | The Practice of Engineering. Remembered.",
-    template: "%s | Gradeum"
-  },
+  metadataBase: new URL("https://gradeum.io"),
+  title: "Gradeum — AI for the Infrastructure of Our World",
   description:
-    "Gradeum helps engineering firms find referenced knowledge, draft deliverables, and maintain a clean professional record while keeping documents on their own server.",
+    "AI for the Infrastructure of Our World. Gradeum-Heavy for professional engineering firms. Gradeum-Lite for infrastructure owners.",
   openGraph: {
-    title: "Gradeum",
+    title: "Gradeum — AI for the Infrastructure of Our World",
     description:
-      "Your firm's engineering knowledge. Working. Static marketing site for Gradeum Technologies LLC.",
-    url: "https://gradeum.com",
+      "AI for the Infrastructure of Our World. Gradeum-Heavy for professional engineering firms. Gradeum-Lite for infrastructure owners.",
+    url: "https://gradeum.io",
     siteName: "Gradeum",
-    type: "website"
-  }
+    type: "website",
+  },
 };
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body>
-        <div className="relative min-h-screen bg-white">
-          <SiteNav />
-          <main>{children}</main>
-          <Footer />
-        </div>
-        <Analytics />
-      </body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }

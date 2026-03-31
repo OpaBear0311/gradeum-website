@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/"
     },
-    sitemap: "https://gradeum.com/sitemap.xml"
+    sitemap: "https://gradeum.io/sitemap.xml"
   };
 }

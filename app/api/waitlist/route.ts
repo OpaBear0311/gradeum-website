@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { getSupabase } from '@/lib/supabase';
 import crypto from 'crypto';
 
 // Rate limit: max 5 submissions per IP hash per hour
@@ -39,6 +39,8 @@ export async function POST(request: NextRequest) {
 
     // Check rate limit
     const oneHourAgo = new Date(Date.now() - RATE_LIMIT_WINDOW_MS).toISOString();
+    const supabase = getSupabase();
+
     const { count, error: countError } = await supabase
       .from('waitlist')
       .select('*', { count: 'exact', head: true })

@@ -1,21 +1,24 @@
-// Gradeum Website v1.0
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import CookieConsent from "@/components/ui/CookieConsent";
-import Analytics from "@/components/layout/Analytics";
+import { DM_Serif_Display, DM_Sans } from "next/font/google";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
+import "./globals.css";
 
-const inter = Inter({
+const dmSerifDisplay = DM_Serif_Display({
+  weight: "400",
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-serif",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://gradeum.io"),
-  title: "Gradeum \u2014 AI for Engineering & Infrastructure",
+  title: "Gradeum \u2014 AI for the Infrastructure of Our World",
   description:
-    "AI-powered practice management for firms. Document retrieval for agencies. Your data never leaves.",
+    "Auditable AI for professional engineering and asset management for critical infrastructure owners.",
   openGraph: {
     images: [{ url: "/og/home.svg", width: 1200, height: 630 }],
   },
@@ -27,12 +30,9 @@ const jsonLd = {
   name: "Gradeum Technologies, LLC",
   url: "https://gradeum.io",
   description:
-    "AI-powered practice management for engineering firms and document retrieval for government agencies.",
+    "Auditable AI for professional engineering and asset management for critical infrastructure owners.",
   foundingDate: "2026",
-  address: {
-    "@type": "PostalAddress",
-    addressCountry: "US",
-  },
+  address: { "@type": "PostalAddress", addressCountry: "US" },
 };
 
 export default function RootLayout({
@@ -41,7 +41,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} antialiased`}>
+    <html
+      lang="en"
+      className={`${dmSerifDisplay.variable} ${dmSans.variable} antialiased`}
+    >
       <head>
         <script
           type="application/ld+json"
@@ -50,8 +53,6 @@ export default function RootLayout({
       </head>
       <body>
         {children}
-        <CookieConsent />
-        <Analytics />
         <VercelAnalytics />
       </body>
     </html>

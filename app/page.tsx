@@ -1,170 +1,187 @@
-import { FadeIn } from "@/components/motion";
-import { coreFeatures, homeStats, trustItems, workflowSteps } from "@/components/content";
-import { BodyText, BrowserMockup, Card, Eyebrow, Heading, PlaceholderMedia, PrimaryButton, Section } from "@/components/ui";
+"use client";
+
+import { useState, FormEvent } from "react";
+import { SITE, HERO, PRODUCTS, CTA, API_URL } from "@/lib/constants";
 
 export default function HomePage() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
-    <>
-      <Section className="overflow-hidden bg-hero-radial pt-16 lg:pt-20">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-          <FadeIn>
-            <div>
-              <Eyebrow>Gradeum Technologies LLC</Eyebrow>
-              <h1 className="text-balance text-5xl font-bold tracking-tight text-gradeum-navy sm:text-6xl">
-                Your firm&apos;s engineering knowledge. Working.
-              </h1>
-              <BodyText className="mt-6 max-w-2xl">
-                Gradeum finds the reference, drafts the document, and tracks the record so your
-                engineers can focus on engineering. Every answer cited to source. Every deliverable
-                reviewed by your PE. Your documents never leave your server.
-              </BodyText>
-              <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-                <PrimaryButton href="/trial">Start Free Trial</PrimaryButton>
-                <p className="text-sm leading-6 text-gradeum-muted">
-                  30-day trial. Your data stays on your machine. No credit card required.
-                </p>
-              </div>
-            </div>
-          </FadeIn>
-          <FadeIn delay={0.1}>
-            <div className="relative">
-              <div className="absolute -left-6 top-6 hidden h-32 w-32 rounded-full bg-gradeum-gold/15 blur-3xl sm:block" />
-              <BrowserMockup
-                title="Product Screenshot Placeholder"
-                alt="Placeholder browser frame representing a Gradeum product screenshot in a mission control style interface."
-                className="relative"
-              />
-            </div>
-          </FadeIn>
-        </div>
-      </Section>
+    <div className="flex min-h-screen flex-col px-6 py-6 sm:px-8 md:py-8">
+      {/* Header */}
+      <header className="flex items-center justify-between">
+        <span className="font-display text-xl tracking-[0.2em] text-navy sm:text-2xl">
+          {SITE.name}
+        </span>
+        <button
+          onClick={() => setModalOpen(true)}
+          className="rounded bg-navy px-5 py-2.5 text-sm font-semibold text-white hover:bg-navy-dark"
+        >
+          {CTA.buttonText} &rarr;
+        </button>
+      </header>
 
-      <Section tone="mist">
-        <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr]">
-          <FadeIn>
-            <PlaceholderMedia
-              title="Port Terminal Aerial Placeholder"
-              alt="Desaturated placeholder block for a port terminal aerial photograph spanning the hero and problem narrative."
-              className="min-h-[420px]"
+      {/* Hero + Cards */}
+      <div className="flex flex-1 flex-col items-center justify-center">
+        <h1 className="mx-auto max-w-3xl text-center font-display text-4xl leading-tight text-ink sm:text-5xl md:text-6xl">
+          {HERO.headline}
+        </h1>
+
+        <div className="mt-12 grid w-full max-w-[900px] gap-6 sm:mt-16 sm:grid-cols-2">
+          <ProductCard
+            name={PRODUCTS.heavy.name}
+            description={PRODUCTS.heavy.description}
+          />
+          <ProductCard
+            name={PRODUCTS.lite.name}
+            description={PRODUCTS.lite.description}
+          />
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="pt-8 text-center text-sm text-ink/50">
+        {SITE.copyright}
+      </footer>
+
+      {/* Modal */}
+      {modalOpen && <RequestModal onClose={() => setModalOpen(false)} />}
+    </div>
+  );
+}
+
+function ProductCard({
+  name,
+  description,
+}: {
+  name: string;
+  description: string;
+}) {
+  return (
+    <div className="rounded-lg border border-ink/10 bg-white p-6 shadow-sm sm:p-8">
+      <h2 className="font-display text-2xl text-navy">{name}</h2>
+      <p className="mt-4 text-sm leading-relaxed text-ink/70">{description}</p>
+    </div>
+  );
+}
+
+function RequestModal({ onClose }: { onClose: () => void }) {
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [interest, setInterest] = useState("Both");
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      company: (form.elements.namedItem("company") as HTMLInputElement).value,
+      interest,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch(`${API_URL}/leads`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error();
+      setStatus("success");
+      setTimeout(onClose, 2000);
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-40 flex items-center justify-center bg-black/50 p-4"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
+      <div className="relative w-full max-w-md rounded-lg bg-white p-8 shadow-xl">
+        <button
+          onClick={onClose}
+          className="absolute right-4 top-4 text-2xl leading-none text-ink/40 hover:text-ink"
+          aria-label="Close"
+        >
+          &times;
+        </button>
+
+        <h2 className="font-display text-2xl text-navy">{CTA.buttonText}</h2>
+
+        {status === "success" ? (
+          <p className="mt-6 text-sm text-ink/70">{CTA.successMessage}</p>
+        ) : status === "error" ? (
+          <p className="mt-6 text-sm text-red-600">{CTA.errorMessage}</p>
+        ) : (
+          <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+            <input
+              name="name"
+              type="text"
+              placeholder="Name"
+              required
+              className="w-full rounded border border-ink/15 px-4 py-2.5 text-sm focus:border-navy focus:outline-none"
             />
-          </FadeIn>
-          <FadeIn delay={0.08}>
-            <Eyebrow>The Problem</Eyebrow>
-            <Heading>Half your week isn&apos;t engineering.</Heading>
-            <BodyText className="mt-6">
-              The engineer who should be doing engineering is spending half their time doing
-              everything but. Searching for references they&apos;ve found before. Rebuilding
-              documents they&apos;ve already built. Tracking down permits. Formatting reports.
-            </BodyText>
-            <blockquote className="mt-8 border-l-4 border-gradeum-gold pl-6 font-serif text-xl italic leading-8 text-gradeum-navy">
-              Every hour stolen from engineering judgment is a small violation of the oath. Not
-              from negligence. Not from incompetence. From volume.
-            </blockquote>
-          </FadeIn>
-        </div>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {homeStats.map((stat, index) => (
-            <FadeIn key={stat.label} delay={index * 0.06}>
-              <Card className="h-full">
-                <p className="text-3xl font-semibold text-gradeum-navy">{stat.value}</p>
-                <p className="mt-3 text-base leading-7 text-gradeum-muted">{stat.label}</p>
-              </Card>
-            </FadeIn>
-          ))}
-        </div>
-      </Section>
-
-      <Section>
-        <FadeIn>
-          <div className="max-w-2xl">
-            <Eyebrow>What Gradeum Does</Eyebrow>
-            <Heading>Gradeum does everything else.</Heading>
-          </div>
-        </FadeIn>
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {coreFeatures.map((feature, index) => (
-            <FadeIn key={feature.title} delay={index * 0.06}>
-              <Card className="h-full">
-                <h3 className="text-2xl font-semibold text-gradeum-navy">{feature.title}</h3>
-                <p className="mt-4 text-base leading-7 text-gradeum-muted">{feature.description}</p>
-              </Card>
-            </FadeIn>
-          ))}
-        </div>
-      </Section>
-
-      <Section className="py-8">
-        <FadeIn>
-          <div className="grid gap-4 rounded-4xl border border-gradeum-border bg-gradeum-navy px-6 py-8 text-center text-sm font-semibold uppercase tracking-[0.12em] text-white sm:grid-cols-2 lg:grid-cols-4">
-            {trustItems.map((item) => (
-              <div key={item} className="rounded-full border border-white/15 bg-white/5 px-4 py-4">
-                {item}
-              </div>
-            ))}
-          </div>
-        </FadeIn>
-      </Section>
-
-      <Section tone="mist">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <FadeIn>
-            <div className="max-w-xl">
-              <Eyebrow>How It Works</Eyebrow>
-              <Heading>Built for firms that need traceability as much as speed.</Heading>
-              <BodyText className="mt-6">
-                Gradeum keeps engineering knowledge usable without asking your team to surrender
-                security, responsible charge, or professional review.
-              </BodyText>
-            </div>
-          </FadeIn>
-          <div className="space-y-6">
-            {workflowSteps.map((step, index) => (
-              <FadeIn key={step.title} delay={index * 0.07}>
-                <Card>
-                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradeum-navy text-lg font-semibold text-white">
-                      {index + 1}
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-semibold text-gradeum-navy">{step.title}</h3>
-                      <p className="mt-3 text-base leading-7 text-gradeum-muted">{step.description}</p>
-                    </div>
-                  </div>
-                </Card>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      <Section tone="navy" className="relative overflow-hidden">
-        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <FadeIn>
-            <div className="max-w-xl">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-gradeum-gold">
-                Final Call
-              </p>
-              <h2 className="text-balance text-4xl font-semibold sm:text-5xl">
-                The practice of engineering. Remembered.
-              </h2>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-white/80">
-                Give your engineers back the time they should be spending on judgment, design, and
-                review.
-              </p>
-              <PrimaryButton href="/trial" className="mt-8">
-                Start Free Trial
-              </PrimaryButton>
-            </div>
-          </FadeIn>
-          <FadeIn delay={0.08}>
-            <PlaceholderMedia
-              title="Bridge and Causeway Placeholder"
-              alt="Placeholder image block representing a bridge or causeway used in the final call-to-action section."
-              className="min-h-[340px] bg-white/10"
+            <input
+              name="email"
+              type="email"
+              placeholder="Email"
+              required
+              className="w-full rounded border border-ink/15 px-4 py-2.5 text-sm focus:border-navy focus:outline-none"
             />
-          </FadeIn>
-        </div>
-      </Section>
-    </>
+            <input
+              name="company"
+              type="text"
+              placeholder="Company"
+              required
+              className="w-full rounded border border-ink/15 px-4 py-2.5 text-sm focus:border-navy focus:outline-none"
+            />
+
+            <fieldset>
+              <legend className="mb-2 text-sm font-medium text-ink/70">
+                I&apos;m interested in:
+              </legend>
+              <div className="flex gap-4 text-sm">
+                {[PRODUCTS.heavy.name, PRODUCTS.lite.name, "Both"].map(
+                  (option) => (
+                    <label key={option} className="flex items-center gap-1.5">
+                      <input
+                        type="radio"
+                        name="interest"
+                        value={option}
+                        checked={interest === option}
+                        onChange={() => setInterest(option)}
+                        className="accent-navy"
+                      />
+                      {option}
+                    </label>
+                  )
+                )}
+              </div>
+            </fieldset>
+
+            <textarea
+              name="message"
+              placeholder="Message (optional)"
+              rows={3}
+              className="w-full rounded border border-ink/15 px-4 py-2.5 text-sm focus:border-navy focus:outline-none"
+            />
+
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="w-full rounded bg-navy py-2.5 text-sm font-semibold text-white hover:bg-navy-dark disabled:opacity-60"
+            >
+              {status === "sending" ? "Sending..." : CTA.submitText}
+            </button>
+          </form>
+        )}
+      </div>
+    </div>
   );
 }

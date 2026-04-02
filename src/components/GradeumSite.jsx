@@ -403,7 +403,14 @@ const PraxisDemo = () => {
                         <div style={{ fontSize: 8, color: "#888" }}>Lead reviewer at 217% capacity</div>
                       </div>
                     </div>
-                    <div style={{ marginTop: 6, fontSize: 8, color: "#AAA", textAlign: "right" }}>Template: Your Firm QC Report · <span style={{ color: "#C4883A" }}>Customize</span></div>
+                    <div style={{ marginTop: 6, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                      <button style={{ display: "inline-flex", alignItems: "center", gap: 3, background: "none", border: "1px solid #D0CCC4", borderRadius: 4, padding: "2px 7px", fontSize: 8, color: "#1B3A5C", cursor: "pointer", fontFamily: "'Lato', sans-serif", fontWeight: 600 }} title="All reports export to .docx, .pdf, or your firm's template format.">
+                        <svg width="10" height="10" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0 }}><path d="M4 1h5l4 4v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" stroke="#1B3A5C" strokeWidth="1.3"/><path d="M9 1v4h4" stroke="#1B3A5C" strokeWidth="1.3"/><path d="M6 9l2 2.5L10 9" stroke="#C4883A" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/><line x1="8" y1="6.5" x2="8" y2="11" stroke="#C4883A" strokeWidth="1.3" strokeLinecap="round"/></svg>
+                        Export to Word
+                      </button>
+                      <div style={{ fontSize: 8, color: "#AAA" }}>Template: Your Firm QC Report · <span style={{ color: "#C4883A" }}>Customize</span></div>
+                    </div>
+                    <div style={{ marginTop: 3, fontSize: 7, color: "#BBB", fontStyle: "italic" }}>All reports export to .docx, .pdf, or your firm's template format.</div>
                   </div>
                 </div>
               ) : m.richType === "forecast" ? (
@@ -452,7 +459,14 @@ const PraxisDemo = () => {
                         <polyline points="0,58 25,52 50,48 75,44 100,50 125,62 150,70 175,60 200,50 225,62 250,75 275,82" fill="none" stroke="#8B5CF6" strokeWidth="1.8"/>
                       </svg>
                     </div>
-                    <div style={{ marginTop: 4, fontSize: 8, color: "#AAA", textAlign: "right" }}>Dashboard: Your Firm — Resource View · <span style={{ color: "#C4883A" }}>Customize</span></div>
+                    <div style={{ marginTop: 4, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                      <button style={{ display: "inline-flex", alignItems: "center", gap: 3, background: "none", border: "1px solid #D0CCC4", borderRadius: 4, padding: "2px 7px", fontSize: 8, color: "#1B3A5C", cursor: "pointer", fontFamily: "'Lato', sans-serif", fontWeight: 600 }} title="All reports export to .docx, .pdf, or your firm's template format.">
+                        <svg width="10" height="10" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0 }}><path d="M4 1h5l4 4v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" stroke="#1B3A5C" strokeWidth="1.3"/><path d="M9 1v4h4" stroke="#1B3A5C" strokeWidth="1.3"/><path d="M6 9l2 2.5L10 9" stroke="#C4883A" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/><line x1="8" y1="6.5" x2="8" y2="11" stroke="#C4883A" strokeWidth="1.3" strokeLinecap="round"/></svg>
+                        Export to Word
+                      </button>
+                      <div style={{ fontSize: 8, color: "#AAA" }}>Dashboard: Your Firm — Resource View · <span style={{ color: "#C4883A" }}>Customize</span></div>
+                    </div>
+                    <div style={{ marginTop: 3, fontSize: 7, color: "#BBB", fontStyle: "italic" }}>All reports export to .docx, .pdf, or your firm's template format.</div>
                   </div>
                 </div>
               ) : m.richType === "invoice" ? (
@@ -486,7 +500,14 @@ const PraxisDemo = () => {
                     <span style={{ color: "#888" }}>Contract: $60,965 of $185,000 (33%)</span>
                     <span style={{ color: "#059669", fontWeight: 600 }}>On budget</span>
                   </div>
-                  <div style={{ padding: "4px 14px 6px", fontSize: 8, color: "#AAA", textAlign: "right" }}>Template: Your Firm Invoice · <span style={{ color: "#C4883A" }}>Customize</span></div>
+                  <div style={{ padding: "4px 14px 6px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <button style={{ display: "inline-flex", alignItems: "center", gap: 3, background: "none", border: "1px solid #D0CCC4", borderRadius: 4, padding: "2px 7px", fontSize: 8, color: "#1B3A5C", cursor: "pointer", fontFamily: "'Lato', sans-serif", fontWeight: 600 }} title="All reports export to .docx, .pdf, or your firm's template format.">
+                      <svg width="10" height="10" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0 }}><path d="M4 1h5l4 4v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" stroke="#1B3A5C" strokeWidth="1.3"/><path d="M9 1v4h4" stroke="#1B3A5C" strokeWidth="1.3"/><path d="M6 9l2 2.5L10 9" stroke="#C4883A" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/><line x1="8" y1="6.5" x2="8" y2="11" stroke="#C4883A" strokeWidth="1.3" strokeLinecap="round"/></svg>
+                      Export to Word
+                    </button>
+                    <div style={{ fontSize: 8, color: "#AAA" }}>Template: Your Firm Invoice · <span style={{ color: "#C4883A" }}>Customize</span></div>
+                  </div>
+                  <div style={{ padding: "0 14px 6px", fontSize: 7, color: "#BBB", fontStyle: "italic" }}>All reports export to .docx, .pdf, or your firm's template format.</div>
                 </div>
               ) : m.text}</div>
           </div>

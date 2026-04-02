@@ -1,6 +1,7 @@
 import { FadeIn } from "@/components/motion";
 import { coreFeatures, homeStats, trustItems, workflowSteps } from "@/components/content";
 import { BodyText, BrowserMockup, Card, Eyebrow, Heading, PlaceholderMedia, PrimaryButton, Section } from "@/components/ui";
+import CivitasDemoCarousel from "@/components/demos/CivitasDemoCarousel";
 
 export default function HomePage() {
   return (
@@ -136,6 +137,29 @@ export default function HomePage() {
           </div>
         </div>
       </Section>
+
+      <section style={{ padding: "80px 0", background: "#0F1D36" }}>
+        <div style={{ textAlign: "center", marginBottom: 40, padding: "0 20px" }}>
+          <h2 style={{
+            fontFamily: "'DM Serif Display', serif",
+            fontSize: "clamp(24px, 4vw, 36px)",
+            color: "#FAF7F2",
+            marginBottom: 12,
+          }}>
+            See Civitas in Action
+          </h2>
+          <p style={{
+            fontFamily: "'DM Sans', sans-serif",
+            fontSize: "clamp(14px, 2vw, 17px)",
+            color: "rgba(255,255,255,0.5)",
+            maxWidth: 520,
+            margin: "0 auto",
+          }}>
+            From the field to the boardroom &mdash; one intelligence engine.
+          </p>
+        </div>
+        <CivitasDemoCarousel />
+      </section>
 
       <Section tone="navy" className="relative overflow-hidden">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">

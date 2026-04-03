@@ -561,11 +561,12 @@ export default function GradeumSite() {
               <div style={{ fontSize: 12, color: "#888", lineHeight: 1.8, marginBottom: 24 }}>
                 Document Q&A · Drawing Intelligence · Consilium Consensus Engine · PE Governance · Time Tracking · Invoicing · Resource Forecasting · Institutional Memory
               </div>
-              <button onClick={() => setShowPraxis(true)} style={{
-                width: "100%", background: NAVY, color: "#FFF", border: "none", borderRadius: 8,
+              <a href="/experience/praxis" style={{
+                display: "block", width: "100%", background: NAVY, color: "#FFF", border: "none", borderRadius: 8,
                 padding: "12px 0", fontSize: 14, fontWeight: 600, cursor: "pointer",
                 fontFamily: "'Cormorant Garamond', Georgia, serif", letterSpacing: 1,
-              }}>Experience Praxis →</button>
+                textDecoration: "none", textAlign: "center", boxSizing: "border-box",
+              }}>Experience Praxis →</a>
             </div>
           </div>
 
@@ -590,11 +591,12 @@ export default function GradeumSite() {
               <div style={{ fontSize: 12, color: "#888", lineHeight: 1.8, marginBottom: 24 }}>
                 Field Intelligence · GPS-Tagged Observations · Photo Documentation · Auto-Generated Reports · Institutional Memory · Condition Trending · Institutional Memory
               </div>
-              <button onClick={() => setShowCivitas(true)} style={{
-                width: "100%", background: AMBER, color: "#FFF", border: "none", borderRadius: 8,
+              <a href="/experience/civitas" style={{
+                display: "block", width: "100%", background: AMBER, color: "#FFF", border: "none", borderRadius: 8,
                 padding: "12px 0", fontSize: 14, fontWeight: 600, cursor: "pointer",
                 fontFamily: "'Cormorant Garamond', Georgia, serif", letterSpacing: 1,
-              }}>Experience Civitas →</button>
+                textDecoration: "none", textAlign: "center", boxSizing: "border-box",
+              }}>Experience Civitas →</a>
             </div>
           </div>
         </div>

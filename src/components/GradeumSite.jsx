@@ -312,23 +312,33 @@ export default function GradeumSite() {
           {/* THE PORTAL — guarded by shields, a gateway to the future */}
           <style>{`
             @keyframes portalGlow {
-              0%, 100% { box-shadow: 0 0 40px 20px rgba(196,136,42,0.15), 0 0 80px 40px rgba(196,136,42,0.08); filter: brightness(1); }
-              50% { box-shadow: 0 0 60px 30px rgba(196,136,42,0.35), 0 0 120px 60px rgba(196,136,42,0.18); filter: brightness(1.08); }
+              0%, 100% {
+                filter: brightness(1.0) drop-shadow(0 0 20px rgba(196,136,42,0.2));
+                box-shadow: 0 0 40px 20px rgba(196,136,42,0.18), 0 0 80px 40px rgba(196,136,42,0.08);
+              }
+              50% {
+                filter: brightness(1.15) drop-shadow(0 0 50px rgba(196,136,42,0.5)) drop-shadow(0 0 100px rgba(196,136,42,0.2));
+                box-shadow: 0 0 60px 30px rgba(196,136,42,0.45), 0 0 120px 60px rgba(196,136,42,0.22);
+              }
             }
             @keyframes portalInner {
-              0%, 100% { opacity: 0.08; }
-              50% { opacity: 0.4; }
+              0%, 100% { opacity: 0.12; }
+              50% { opacity: 0.55; }
+            }
+            @keyframes portalAmbient {
+              0%, 100% { opacity: 0.5; }
+              50% { opacity: 1.0; }
             }
             @keyframes archShimmer {
               0% { stroke-dashoffset: 600; }
               100% { stroke-dashoffset: 0; }
             }
             .portal-gate { transition: transform 0.3s ease; }
-            .portal-gate:hover { transform: scale(1.03); }
+            .portal-gate:hover { transform: scale(1.05); }
             .portal-gate:hover .portal-hover-text { opacity: 1 !important; }
             .portal-gate:hover .portal-glow-div {
-              box-shadow: 0 0 80px 40px rgba(196,136,42,0.5), 0 0 140px 70px rgba(196,136,42,0.28) !important;
-              filter: brightness(1.12) !important;
+              filter: brightness(1.2) drop-shadow(0 0 60px rgba(196,136,42,0.6)) drop-shadow(0 0 120px rgba(196,136,42,0.3)) !important;
+              box-shadow: 0 0 80px 40px rgba(196,136,42,0.55), 0 0 160px 80px rgba(196,136,42,0.3) !important;
             }
             .portal-shimmer-path {
               stroke-dasharray: 300;
@@ -337,12 +347,11 @@ export default function GradeumSite() {
             }
             @media (prefers-reduced-motion: reduce) {
               .portal-gate, .portal-gate:hover { animation: none !important; transform: none !important; }
-              .portal-glow-div { animation: none !important; box-shadow: 0 0 40px 20px rgba(196,136,42,0.2) !important; }
+              .portal-glow-div { animation: none !important; box-shadow: 0 0 40px 20px rgba(196,136,42,0.25) !important; filter: none !important; }
               .portal-shimmer-path { animation: none !important; }
             }
             @media (max-width: 600px) {
-              .portal-glow-div { box-shadow: 0 0 24px 12px rgba(196,136,42,0.12) !important; }
-            }
+              .portal-glow-div { box-shadow: 0 0 30px 15px rgba(196,136,42,0.18) !important; }
           `}</style>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
             {/* Left guardian shield — ornate */}
@@ -422,7 +431,7 @@ export default function GradeumSite() {
                 {/* Third arch line */}
                 <path d="M24,155 L24,60 A36,36 0 0,1 96,60 L96,155" fill="none" stroke={AMBER} strokeWidth="0.8" opacity="0.2"/>
                 {/* Inner glow fill */}
-                <path d="M24,155 L24,60 A36,36 0 0,1 96,60 L96,155 Z" fill={AMBER} style={{ animation: "portalInner 4s ease-in-out infinite" }}/>
+                <path d="M24,155 L24,60 A36,36 0 0,1 96,60 L96,155 Z" fill={AMBER} style={{ animation: "portalInner 4.5s ease-in-out infinite" }}/>
 
                 {/* Voussoirs — arch stones */}
                 {[-60,-45,-30,-15,0,15,30,45,60].map((angle, i) => {
@@ -480,11 +489,19 @@ export default function GradeumSite() {
                   return <circle key={`id${i}`} cx={cx} cy={cy} r="1" fill={AMBER} opacity="0.2"/>;
                 })}
               </svg>
+              {/* Ambient radial glow behind arch */}
+              <div style={{
+                position: "absolute", top: -40, left: -40, right: -40, bottom: -20,
+                background: "radial-gradient(ellipse at 50% 40%, rgba(196,136,42,0.25) 0%, transparent 70%)",
+                animation: "portalAmbient 4.5s ease-in-out infinite",
+                pointerEvents: "none", zIndex: -1,
+                borderRadius: "50%",
+              }}/>
               {/* Glow container */}
               <div className="portal-glow-div" style={{
                 position: "absolute", top: 12, left: 18, right: 18, bottom: 0,
                 borderRadius: "50% 50% 0 0 / 30% 30% 0 0",
-                animation: "portalGlow 3s ease-in-out infinite",
+                animation: "portalGlow 4s ease-in-out infinite",
                 transition: "box-shadow 0.3s ease, filter 0.3s ease",
                 pointerEvents: "none",
               }}/>

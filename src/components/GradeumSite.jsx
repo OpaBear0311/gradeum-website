@@ -312,14 +312,37 @@ export default function GradeumSite() {
           {/* THE PORTAL — guarded by shields, a gateway to the future */}
           <style>{`
             @keyframes portalGlow {
-              0%, 100% { box-shadow: 0 0 40px rgba(196,136,58,0.25), 0 0 80px rgba(196,136,58,0.15), inset 0 0 40px rgba(196,136,58,0.08); }
-              50% { box-shadow: 0 0 60px rgba(196,136,58,0.5), 0 0 120px rgba(196,136,58,0.25), inset 0 0 60px rgba(196,136,58,0.2); }
+              0%, 100% { box-shadow: 0 0 40px 20px rgba(196,136,42,0.15), 0 0 80px 40px rgba(196,136,42,0.08); filter: brightness(1); }
+              50% { box-shadow: 0 0 60px 30px rgba(196,136,42,0.35), 0 0 120px 60px rgba(196,136,42,0.18); filter: brightness(1.08); }
             }
             @keyframes portalInner {
-              0%, 100% { opacity: 0.06; }
-              50% { opacity: 0.35; }
+              0%, 100% { opacity: 0.08; }
+              50% { opacity: 0.4; }
             }
-            .portal-gate:hover { transform: scale(1.05); }
+            @keyframes archShimmer {
+              0% { stroke-dashoffset: 600; }
+              100% { stroke-dashoffset: 0; }
+            }
+            .portal-gate { transition: transform 0.3s ease; }
+            .portal-gate:hover { transform: scale(1.03); }
+            .portal-gate:hover .portal-hover-text { opacity: 1 !important; }
+            .portal-gate:hover .portal-glow-div {
+              box-shadow: 0 0 80px 40px rgba(196,136,42,0.5), 0 0 140px 70px rgba(196,136,42,0.28) !important;
+              filter: brightness(1.12) !important;
+            }
+            .portal-shimmer-path {
+              stroke-dasharray: 300;
+              stroke-dashoffset: 600;
+              animation: archShimmer 6s linear infinite;
+            }
+            @media (prefers-reduced-motion: reduce) {
+              .portal-gate, .portal-gate:hover { animation: none !important; transform: none !important; }
+              .portal-glow-div { animation: none !important; box-shadow: 0 0 40px 20px rgba(196,136,42,0.2) !important; }
+              .portal-shimmer-path { animation: none !important; }
+            }
+            @media (max-width: 600px) {
+              .portal-glow-div { box-shadow: 0 0 24px 12px rgba(196,136,42,0.12) !important; }
+            }
           `}</style>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
             {/* Left guardian shield — ornate */}
@@ -385,19 +408,21 @@ export default function GradeumSite() {
             </svg>
 
             {/* THE PORTAL — ornate Roman triumphal arch */}
-            <div onClick={() => setShowLaunch(true)} className="portal-gate" style={{
-              width: 120, height: 155, position: "relative", cursor: "pointer",
-              transition: "transform 0.5s ease",
+            <a href="https://porta.gradeum.io" className="portal-gate" style={{
+              width: 120, display: "inline-block", position: "relative", cursor: "pointer",
+              textDecoration: "none",
             }}>
-              <svg width="120" height="155" viewBox="0 0 120 155" style={{ position: "absolute", top: 0, left: 0 }}>
+              <svg width="120" height="155" viewBox="0 0 120 155" style={{ display: "block" }}>
                 {/* Outer arch — main structure */}
                 <path d="M8,155 L8,55 A52,52 0 0,1 112,55 L112,155" fill="none" stroke={AMBER} strokeWidth="3" opacity="0.55"/>
+                {/* Shimmer trace on outer arch */}
+                <path className="portal-shimmer-path" d="M8,155 L8,55 A52,52 0 0,1 112,55 L112,155" fill="none" stroke="rgba(255,235,200,0.35)" strokeWidth="2" />
                 {/* Inner arch */}
                 <path d="M18,155 L18,58 A42,42 0 0,1 102,58 L102,155" fill="none" stroke={AMBER} strokeWidth="1.5" opacity="0.3"/>
                 {/* Third arch line */}
                 <path d="M24,155 L24,60 A36,36 0 0,1 96,60 L96,155" fill="none" stroke={AMBER} strokeWidth="0.8" opacity="0.2"/>
                 {/* Inner glow fill */}
-                <path d="M24,155 L24,60 A36,36 0 0,1 96,60 L96,155 Z" fill={AMBER} style={{ animation: "portalInner 5s ease-in-out infinite" }}/>
+                <path d="M24,155 L24,60 A36,36 0 0,1 96,60 L96,155 Z" fill={AMBER} style={{ animation: "portalInner 4s ease-in-out infinite" }}/>
 
                 {/* Voussoirs — arch stones */}
                 {[-60,-45,-30,-15,0,15,30,45,60].map((angle, i) => {
@@ -456,12 +481,22 @@ export default function GradeumSite() {
                 })}
               </svg>
               {/* Glow container */}
-              <div style={{
+              <div className="portal-glow-div" style={{
                 position: "absolute", top: 12, left: 18, right: 18, bottom: 0,
                 borderRadius: "50% 50% 0 0 / 30% 30% 0 0",
-                animation: "portalGlow 5s ease-in-out infinite",
+                animation: "portalGlow 3s ease-in-out infinite",
+                transition: "box-shadow 0.3s ease, filter 0.3s ease",
+                pointerEvents: "none",
               }}/>
-            </div>
+              {/* Hover text */}
+              <span className="portal-hover-text" style={{
+                display: "block", textAlign: "center", marginTop: 4,
+                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontSize: 14, fontStyle: "italic", color: AMBER,
+                opacity: 0, transition: "opacity 0.3s ease",
+                pointerEvents: "none",
+              }}>Enter the Gateway</span>
+            </a>
 
             {/* Right guardian shield — ornate */}
             <svg width="109" height="144" viewBox="0 0 90 120" style={{ opacity: 0.12 }}>

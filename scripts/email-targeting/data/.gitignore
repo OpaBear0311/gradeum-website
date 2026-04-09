@@ -1,0 +1,4 @@
+# Ignore generated pipeline output (contains PII)
+send_queue.csv
+review.csv
+sent_log.csv

@@ -4,3 +4,10 @@ review.csv
 sent_log.csv
 sourced_contacts.csv
 agent_log.csv
+email_drafts.csv
+template_performance.json
+inbound_leads.csv
+leads.csv
+
+# Reports directory (generated daily)
+reports/

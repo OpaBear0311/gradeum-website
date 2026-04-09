@@ -2,3 +2,5 @@
 send_queue.csv
 review.csv
 sent_log.csv
+sourced_contacts.csv
+agent_log.csv

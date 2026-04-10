@@ -1,0 +1,85 @@
+name: Daily Outreach Report
+
+# Runs the monitor agent daily to pull leads, analyze outreach
+# performance, and generate the daily report. Uploads the report
+# and email drafts as workflow artifacts for download.
+#
+# Required secrets (configure in repo Settings → Secrets → Actions):
+#   GRADEUM_API_KEY          — API key for api.gradeum.io/v1/leads
+#   # OR
+#   SUPABASE_URL             — Supabase project URL
+#   SUPABASE_SERVICE_KEY     — Supabase service role key
+#
+# Optional secrets:
+#   ZEROBOUNCE_API_KEY       — enables email verification during targeting
+#   NEVERBOUNCE_API_KEY      — alternative to ZeroBounce
+
+on:
+  schedule:
+    # 8:00 AM UTC daily (3 AM ET, midnight PT)
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Report date (YYYY-MM-DD, blank = today)'
+        required: false
+        default: ''
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: scripts/email-targeting
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: scripts/email-targeting/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate daily report
+        env:
+          GRADEUM_API_KEY: ${{ secrets.GRADEUM_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            python monitor.py --date "${{ github.event.inputs.date }}"
+          else
+            python monitor.py
+          fi
+
+      - name: Generate email drafts (if send_queue exists)
+        run: |
+          if [ -f data/send_queue.csv ]; then
+            python advertiser.py || echo "Advertiser skipped — no queue"
+          else
+            echo "No send_queue.csv — skipping advertiser"
+          fi
+
+      - name: Print report summary to job log
+        run: |
+          if [ -f data/reports/latest_report.json ]; then
+            echo "=== LATEST REPORT ==="
+            cat data/reports/latest_report.json
+          fi
+
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-report-${{ github.run_id }}
+          path: |
+            scripts/email-targeting/data/reports/
+            scripts/email-targeting/data/email_drafts.csv
+            scripts/email-targeting/data/template_performance.json
+          if-no-files-found: warn
+          retention-days: 90

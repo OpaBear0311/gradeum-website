@@ -1,0 +1,106 @@
+name: Send Outreach Emails (Manual)
+
+# MANUAL TRIGGER ONLY — this workflow actually sends emails to contacts
+# in data/email_drafts.csv. It does NOT run on a schedule.
+#
+# To use:
+#   1. Configure the email provider secret (SENDGRID_API_KEY, etc.)
+#   2. Go to Actions tab → "Send Outreach Emails" → Run workflow
+#   3. Set dry_run=false to actually send (default is dry_run=true)
+#   4. Optionally set a limit for the first real run
+#
+# Required secrets:
+#   SENDGRID_API_KEY       — OR —
+#   POSTMARK_SERVER_TOKEN  — OR —
+#   AWS_ACCESS_KEY_ID + AWS_SECRET_ACCESS_KEY + AWS_REGION  — OR —
+#   SMTP_HOST + SMTP_PORT + SMTP_USERNAME + SMTP_PASSWORD
+#
+# Common:
+#   GRADEUM_FROM_EMAIL     — sender address (default: outreach@gradeum.io)
+#   GRADEUM_FROM_NAME      — sender display name (default: Gradeum)
+#   GRADEUM_REPLY_TO       — optional reply-to
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (do not actually send)'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+      limit:
+        description: 'Max emails to send this run (blank = all)'
+        required: false
+        default: '5'
+      rate:
+        description: 'Seconds between sends'
+        required: false
+        default: '15'
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: scripts/email-targeting
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: scripts/email-targeting/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Verify drafts exist
+        run: |
+          if [ ! -f data/email_drafts.csv ]; then
+            echo "::error::No email_drafts.csv found. Run the daily report workflow first."
+            exit 1
+          fi
+          echo "Drafts found:"
+          head -5 data/email_drafts.csv
+
+      - name: Dispatch emails
+        env:
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          POSTMARK_SERVER_TOKEN: ${{ secrets.POSTMARK_SERVER_TOKEN }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          GRADEUM_FROM_EMAIL: ${{ secrets.GRADEUM_FROM_EMAIL }}
+          GRADEUM_FROM_NAME: ${{ secrets.GRADEUM_FROM_NAME }}
+          GRADEUM_REPLY_TO: ${{ secrets.GRADEUM_REPLY_TO }}
+        run: |
+          ARGS="--yes --rate ${{ github.event.inputs.rate }}"
+          if [ "${{ github.event.inputs.dry_run }}" = "false" ]; then
+            ARGS="$ARGS --send"
+          fi
+          if [ -n "${{ github.event.inputs.limit }}" ]; then
+            ARGS="$ARGS --limit ${{ github.event.inputs.limit }}"
+          fi
+          python send.py $ARGS
+
+      - name: Upload send log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: send-log-${{ github.run_id }}
+          path: |
+            scripts/email-targeting/data/sent_log.csv
+            scripts/email-targeting/data/dry_run_outbox.txt
+          if-no-files-found: warn
+          retention-days: 90

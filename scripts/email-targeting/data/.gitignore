@@ -8,6 +8,7 @@ email_drafts.csv
 template_performance.json
 inbound_leads.csv
 leads.csv
+dry_run_outbox.txt
 
 # Reports directory (generated daily)
 reports/
